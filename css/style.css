@@ -1,0 +1,140 @@
+*{
+	margin :0;
+	padding :0;
+}
+
+.all{
+	/*background-color: grey; */
+	/*height :600px;*/	
+}
+
+.top{
+	/*background-color: red; */
+	margin-top:5px;
+	margin-bottom:10px;
+	margin-left:3px;
+	margin-right:3px;
+	box-shadow: 3px 3px 5px black;
+	border-top: solid  black 1px ;
+	border-left: solid  black 1px ;
+}
+
+.logo{
+	/*background-color :green;*/
+	height :50px;
+}
+
+.search-area{
+	/*background-color :yellow;*/
+	height :50px;
+}
+
+.search-button{
+	/*background-color :grey;*/
+	height :50px;
+}	
+
+.main{
+	/*background-color: green ; */
+	height :530px;
+}
+
+.menu{
+	/*background-color: yellow;*/
+	height :530px;
+	border: solid 2px black ;
+	box-shadow: 3px 3px 5px black;
+	background-color :white;
+	margin-left :19px;
+	margin-right: 10px ;
+	margin-top :10px;
+}
+
+.logo h1{
+	font-size: 28px;
+	margin-top:10px;
+	margin-left :0px;
+	margin-right :0px;
+	color : #64c1e5;
+	text-shadow: 3px 3px 5px black;
+	font-weight: bold;
+}
+
+.search-area input{
+	height :30px;
+	margin-top :10px;
+	width :100%;
+	border: solid 2px #64c1e5 ;
+	padding-left :10px;
+	box-shadow: 3px 3px 5px black;
+	background-color: white;
+}
+
+.search-button button{
+	height :30px;
+	margin-top :10px;
+	width :100%;
+	border :none;
+	color: #64c1e5;	
+	font-weight: bold;
+	font-size: 20px;
+	border: solid 2px #64c1e5 ;
+	box-shadow: 3px 3px 5px black;
+	background-color :white;
+}
+
+.categories{
+	height: 80%;
+	margin-top :10px;
+	
+}
+
+.long-search{
+	/*background-color: grey ;*/
+	height :10%;
+	margin-top :10px;
+}
+
+.category{
+	color :#64c1e5;
+	font-weight: bold;
+	text-shadow: 2px 3px 5px black;
+
+}
+
+.list{
+	width:80%;
+}
+
+.long-search button{
+	width :70%;
+	margin-top :10px;
+	border :none;
+	color: #64c1e5;	
+	font-weight: bold;
+	font-size: 20px;
+	border: solid 2px #64c1e5 ;
+	box-shadow: 3px 3px 5px black;
+	background-color :white;
+}
+
+.display{
+	background-color: pink;
+	min-height: 530px;
+	margin :15px;
+	margin-top :10px; 
+	border: solid 2px black ;
+	box-shadow: 3px 3px 5px black;
+	background-color :white;
+}
+
+.doc{
+	height :300px;
+	background-color: green ;
+	margin :10px;
+	margin-left :40px;
+}
+
+.top-docs{
+	margin-left :30px;
+}
