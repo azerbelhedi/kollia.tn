@@ -21,7 +21,7 @@
 			</div>
 			<div class = "col-md-3 col-sm-12 search-button">
 				<button>search</button>
-				<div class = "log">login/user-name</div>
+				<div class = "log" onclick="switchLog()">login </div>
 			</div>
 		</div>
 		<div class = "row main">
@@ -63,7 +63,7 @@
 						</div>
 						<div class = "type">
 							<center>
-								<h2>serie</h2>
+								<h2>serie + corr</h2>
 							</center>
 						</div>
 					</div>
@@ -129,6 +129,61 @@
 				</div>
 			</div>
 		</div>
+		<center>
+			<div class = "log-block">
+				<h1 id = "login-title">log in</h1>
+				<div class = "login">
+					<form id = "login-form">
+						<div class = "block">
+							<label>email<span style = "color: red">*</span> </label>
+							<input required type="email" id = "email">
+						</div>
+						<div class = "block">
+							<label>password<span style = "color: red">*</span> </label>
+							<input required type="password" id = "password">
+						</div>
+						<input type="submit" value="login" id ="login-button">
+					</form>
+				</div>
+				<hr>
+				<h1>or sign up</h1>
+				<div class = "signup">
+					<form id = "signup-form">
+						<div class = "block">
+							<label>email<span style = "color: red">*</span> </label>
+							<input required type="email" id = "email2">
+						</div>
+						<div class = "block">
+							<label>name<span style = "color: red">*</span> </label>
+							<input required type="text" id = "name">
+						</div>
+						<div class = "block">
+							<label>phone </label>
+							<input type="text" id = "phone">
+						</div>
+						<div class = "block-select">
+							<div class = "block">
+								<label>university</label>
+								<select></select>
+							</div>
+							<div class = "block">
+								<label>school</label>
+								<select></select>
+							</div>
+						</div>
+						<div class = "block">
+							<label>password<span style = "color: red">*</span> </label>
+							<input required type="password" id = "pass1">
+						</div>
+						<div class = "block">
+							<label>confirm password<span style = "color: red">*</span> </label>
+							<input required type="password" id = "pass2">
+						</div>
+						<input type="submit" value="sign up" id = "signup-button">
+					</form>
+				</div>
+			</div>
+		</center>
 		<div class = "fixed">
 			<div class = "round-upload">
 				<button>UPLOAD</button>

@@ -91,7 +91,7 @@
 
 .search-button .log{
 	color :black;
-	margin-left :10px;
+	margin-left :40px;
 	font-size: 15px;
 	margin-top :10px;
 	display :inline;
@@ -197,7 +197,7 @@
 }
 
 .doc .type h2{
-	color :red;
+	color :green;
 	font-size: 28px;
 }
 
@@ -216,6 +216,46 @@
 	box-shadow: 3px 3px 5px black;
 }
 
+.log-block{
+	display: none ;
+	min-height: 700px ;
+	background-color: red ;
+	width :60%;
+	margin-top: 62px;
+	background-color: #BFE3E3;
+	opacity: 0.9;
+	box-shadow: 3px 3px 5px black;
+}
+
+.block{
+}
+
+.block label{
+	display: inline-block ;
+	width :250px;
+	text-align: left ;
+	font-size: 25px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.block input{
+	display :inline-block;
+	width :200px;
+}
+
+.block select{
+	width :200px;
+}
+
+#signup-button , #login-button{
+	margin-top :20px;
+} 
+
+#login-title{
+	padding-top :20px;
+}
+
 @media only screen and (max-width: 600px){
 	.fixed .round-upload button{
 		right :37%;
@@ -225,6 +265,8 @@
 		width: 80%;
 	}
 }
+
+
 
 body{
 	background-image: url("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fd2v9y0dukr6mq2.cloudfront.net%2Fvideo%2Fthumbnail%2FJrbItQz%2Fglowing-futuristic-network-shape-loopable-background-4k-4096x2304_nvzq1ms0g__F0000.png&f=1");
