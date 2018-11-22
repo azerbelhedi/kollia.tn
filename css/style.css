@@ -128,13 +128,66 @@
 	background-color :white;
 }
 
+.top-docs{
+	margin-left :30px;
+}
+
+.new-docs{
+	margin-left :30px;
+}
+
 .doc{
-	height :300px;
-	background-color: green ;
+	height :310px;
+	background-color: #C4E9F5 ;
 	margin :10px;
 	margin-left :40px;
 }
 
-.top-docs{
-	margin-left :30px;
+.doc .name{
+	background-color: #8dd3ef ;
+	height :50%;
+	width :95%;
+	margin-top :15px;
+	margin-left :5px;
+}
+
+.doc .info{
+	background-color: #8dd3ef ;
+	height :20%;
+	width :95%;
+	margin-top :15px;
+	margin-left :5px;
+}
+
+.doc .type{
+	background-color: #8dd3ef ;
+	height :10%;
+	width :95%;
+	margin-top :15px;
+	margin-left :5px;
+}
+
+.fixed .round-upload button{
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	height: 50px;
+	width :150px;
+	border: none;
+	background-color: #8dd3ef;
+	color :white;
+	font-size: 25px;
+	font-weight: bold ;
+	border-radius: 25px;
+	box-shadow: 3px 3px 5px black;
+}
+
+@media only screen and (max-width: 600px){
+	.fixed .round-upload button{
+		right :37%;
+	}
+	.doc{
+		margin-left :10px;
+		width: 80%;
+	}
 }
