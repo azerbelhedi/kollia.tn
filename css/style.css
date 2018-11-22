@@ -10,13 +10,12 @@
 
 .top{
 	/*background-color: red; */
-	margin-top:5px;
-	margin-bottom:10px;
-	margin-left:3px;
-	margin-right:3px;
 	box-shadow: 3px 3px 5px black;
-	border-top: solid  black 1px ;
-	border-left: solid  black 1px ;
+	background-color: #5DA6A6;
+	/*/a/a/a/a/a//anow-----------*/
+	position: fixed;
+	z-index: 3;
+	width: 100%;
 }
 
 .logo{
@@ -37,6 +36,9 @@
 .main{
 	/*background-color: green ; */
 	height :530px;
+	position: absolute;
+	width: 100%;
+	top :50px;
 }
 
 .menu{
@@ -45,9 +47,12 @@
 	border: solid 2px black ;
 	box-shadow: 3px 3px 5px black;
 	background-color :white;
-	margin-left :19px;
+	margin-left :5px;
 	margin-right: 10px ;
 	margin-top :10px;
+	background-color: #5DA6A6;
+	position:fixed;
+	z-index: 3;
 }
 
 .logo h1{
@@ -73,7 +78,7 @@
 .search-button button{
 	height :30px;
 	margin-top :10px;
-	width :100%;
+	width :50%;
 	border :none;
 	color: #64c1e5;	
 	font-weight: bold;
@@ -81,12 +86,25 @@
 	border: solid 2px #64c1e5 ;
 	box-shadow: 3px 3px 5px black;
 	background-color :white;
+	display: inline;
+}
+
+.search-button .log{
+	color :black;
+	margin-left :10px;
+	font-size: 15px;
+	margin-top :10px;
+	display :inline;
+}
+
+.search-button .log:hover{
+	color :blue;
+	text-decoration: underline;
 }
 
 .categories{
 	height: 80%;
 	margin-top :10px;
-	
 }
 
 .long-search{
@@ -125,46 +143,62 @@
 	margin-top :10px; 
 	border: solid 2px black ;
 	box-shadow: 3px 3px 5px black;
-	background-color :white;
+	background-color :#BFE3E3;
+	position: absolute;
+	right :10px;
+	width: 70%;
+	opacity: 0.9;
 }
 
-.top-docs{
-	margin-left :30px;
-}
-
-.new-docs{
+.top-docs , .new-docs , .follow-docs , .res-docs{
 	margin-left :30px;
 }
 
 .doc{
 	height :310px;
-	background-color: #C4E9F5 ;
+	background-color: #8dd3ef ;
 	margin :10px;
 	margin-left :40px;
+	box-shadow: 3px 3px 5px black;
+	opacity:1;
 }
 
 .doc .name{
-	background-color: #8dd3ef ;
+	background-color: #C4E9F5 ;
 	height :50%;
 	width :95%;
 	margin-top :15px;
 	margin-left :5px;
+	box-shadow: 3px 3px 5px black;
 }
 
 .doc .info{
-	background-color: #8dd3ef ;
+	background-color: #C4E9F5 ;
 	height :20%;
 	width :95%;
 	margin-top :15px;
 	margin-left :5px;
+	box-shadow: 3px 3px 5px black;
+}
+
+.doc .info h6{
+	margin-left :10px;
+	line-height: 7px;
+	padding-top: 5px;
 }
 
 .doc .type{
-	background-color: #8dd3ef ;
+	background-color: #C4E9F5 ;
 	height :10%;
 	width :95%;
 	margin-top :15px;
 	margin-left :5px;
+	box-shadow: 3px 3px 5px black;
+}
+
+.doc .type h2{
+	color :red;
+	font-size: 28px;
 }
 
 .fixed .round-upload button{
@@ -190,4 +224,8 @@
 		margin-left :10px;
 		width: 80%;
 	}
+}
+
+body{
+	background-image: url("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fd2v9y0dukr6mq2.cloudfront.net%2Fvideo%2Fthumbnail%2FJrbItQz%2Fglowing-futuristic-network-shape-loopable-background-4k-4096x2304_nvzq1ms0g__F0000.png&f=1");
 }
