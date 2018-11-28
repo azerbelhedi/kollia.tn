@@ -8,9 +8,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+	<div class = "popup">+9</div>
 	<div class = "container-fluid all">
 		<div class = "row top">
 			<div class = "col-md-3 col-sm-5 logo">
@@ -20,8 +22,8 @@
 				<input type="text" placeholder="search documents">
 			</div>
 			<div class = "col-md-3 col-sm-12 search-button">
-				<button>search</button>
-				<div class = "log" onclick="switchLog()">login </div>
+				<button>SEARCH</button>
+				<div class = "fixed-login" onclick="switchLog()">LOGIN </div>
 			</div>
 		</div>
 		<div class = "row main">
@@ -42,11 +44,13 @@
 				</div>
 				<div class = "long-search">
 					<center>
-						<button>filter</button>
+						<button>FILTER</button>
 					</center>
 				</div>
 			</div>
 			<div class = "col-md-8 col-sm-8 col-12 display">
+				<div class = "profile">profile should be here </div>
+				<div class = "notification-list">notification list should be here </div>
 				<div class = "row top-docs">
 					<h1>#TOP</h1>
 					<hr>
@@ -164,11 +168,11 @@
 						<div class = "block-select">
 							<div class = "block">
 								<label>university</label>
-								<select></select>
+								<select id = "uni" ></select>
 							</div>
 							<div class = "block">
 								<label>school</label>
-								<select></select>
+								<select id = "school"></select>
 							</div>
 						</div>
 						<div class = "block">
@@ -183,10 +187,40 @@
 					</form>
 				</div>
 			</div>
+			<div class = "upload-block">
+				<h1>upload document</h1>
+				<form id = "upload-form">
+					<div class = "block">
+						<label>file name<span style = "color: red">*</span> </label>
+						<input required type="text" id = "fileName">
+					</div>
+					<div class = "block">
+						<label>subject<span style = "color: red">*</span> </label>
+						<select></select>
+					</div>
+					<div class = "block">
+						<label>type<span style = "color: red">*</span> </label>
+						<select></select>
+					</div>
+					<div class = "block">
+						<label>ennonce<span style = "color: red">*</span> </label>
+						<input  type="radio" id = "ennoncé">
+					</div>
+					<div class = "block">
+						<label>correction<span style = "color: red">*</span> </label>
+						<input  type="radio" id = "correction">
+					</div>
+					<div class = "block">
+						<label>select file<span style = "color: red">*</span> </label>
+						<input  type="file" id = "file">
+					</div>
+					<input type="submit" value="upload" id = "upload-button">
+				</form>
+			</div>
 		</center>
 		<div class = "fixed">
 			<div class = "round-upload">
-				<button>UPLOAD</button>
+				<button onclick="displayUpload()">UPLOAD</button>
 			</div>
 		</div>	
 	</div>
