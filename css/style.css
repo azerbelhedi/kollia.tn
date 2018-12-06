@@ -83,7 +83,6 @@
 	color: #64c1e5;	
 	font-weight: bold;
 	font-size: 20px;
-	border-radius: 10px ;
 	box-shadow: 3px 3px 5px black;
 	background-color :#2e3b55;
 	display: inline;
@@ -130,13 +129,12 @@
 }
 
 .long-search button{
-	width :50%;
+	width :80%;
 	height :30px;
 	border :none;
 	color: #64c1e5;	
 	font-weight: bold;
 	font-size: 20px;
-	border-radius: 10px;
 	box-shadow: 3px 3px 5px black;
 	background-color :#2e3b55;
 }
@@ -154,29 +152,86 @@
 	background-color :#BFE3E3;
 	position: absolute;
 	right :10px;
-	width: 70%;
+	width: 80%;
 	opacity: 0.9;
 }
 
 .top-docs , .new-docs , .follow-docs , .res-docs{
-	margin-left :30px;
+	margin-left :10px;
 }
 
 .doc{
+	width :180px;
 	height :310px;
 	background-color: #8dd3ef ;
-	margin :10px;
-	margin-left :40px;
+	margin :10px;	
 	box-shadow: 3px 3px 5px black;
 	opacity:1;
+}
+
+.doc2{
+	width :180px;
+	height :310px;
+	background-color: #8dd3ef ;
+	margin :10px;	
+	box-shadow: 3px 3px 5px black;
+	opacity:1;
+	padding: 0 ;
+}
+
+.doc2 .name-and-path{
+	width :100%;
+	margin :0;
+	box-shadow: 3px 3px 5px black;
+	margin-bottom: 2px ;
+}
+
+.doc2 .name-and-path h2  , h4{
+	margin :0;
+	text-align: center ;
+}
+
+.doc2 .doc2-img img{
+	height: 150px;
+	width: 100% ;
+}
+
+.doc2 .doc2-img{
+	box-shadow: 3px 3px 5px black;
+	margin-bottom: 2px ;
+}
+.doc2 .subject-type{
+	display: flex ;
+	box-shadow: 3px 3px 5px black;
+	margin-bottom: 2px ;
+	height :30px;
+}
+
+.doc2 .subject-type > div{
+	width :50%;
+	margin-top: 5px ;
+}
+
+.doc2 .footer h5{
+	text-align: center ;
+	margin-top: 5px; 
+	height :20px;
+	padding-top :10px;
+}
+
+.doc2 .footer{
+	box-shadow: 3px 3px 5px black;
+	margin-bottom: 2px ;
+	height :35px;
 }
 
 .doc .name{
 	background-color: #C4E9F5 ;
 	height :50%;
-	width :95%;
+	width :99%;
 	margin-top :15px;
-	margin-left :5px;
+	margin-left :auto;
+	margin-right: auto ;
 	box-shadow: 3px 3px 5px black;
 }
 
@@ -213,14 +268,13 @@
 	position: fixed;
 	bottom: 10px;
 	right: 35px;
-	height: 30px;
-	width :150px;
+	height: 40px;
+	width :200px;
 	border: none;
 	background-color: #2e3b55;
 	color :white;
 	font-size: 25px;
 	font-weight: bold ;
-	border-radius: 25px;
 	box-shadow: 3px 3px 5px black;
 	color : #64c1e5;
 }
@@ -267,7 +321,26 @@
 #login-title{
 	padding-top :20px;
 }
-
+/* 992 */
+@media only screen and (max-width: 992px){
+	.stop{
+		background-color: #88bec3 ;
+		color :#2e3b55;
+		text-align: center ;
+		position: fixed ;
+		top :0px;
+		right :0px;
+		z-index: 10;
+		height :100%;
+		width :100%;
+		opacity :1 !important; 
+	}
+	.stop img{
+		margin-top :20px;
+		height :150px;
+		width :150px;
+	}
+}
 @media only screen and (max-width: 600px){
 	.fixed .round-upload button{
 		right :37%;
@@ -295,14 +368,13 @@
 	top :10px;
 	right :40px;
 	z-index: 4;
-	height: 32px;
+	height: 30px;
 	width :120px;
 	border: none;
 	background-color: #2e3b55;
 	color :white;
-	font-size: 15px;
+	font-size: 18px;
 	font-weight: bold ;
-	border-radius: 25px;
 	box-shadow: 3px 3px 5px black;
 	color : #64c1e5;
 	text-align: center ;
@@ -328,7 +400,9 @@
 	background-color: #d30000;
 	font-size: 35px;
 	font-weight: bold ;
+	display: none ;
 }
+
 
 .popup:hover{
 	cursor: pointer ;
@@ -416,9 +490,14 @@ button:hover{
 	font-size: 30px ;
 }
 
+.stop{
+	opacity: 0;
+}
+
 body{
 	background-image: url("../back.png");
 	background-size: cover ;
 }
+
 
 /*https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fd2v9y0dukr6mq2.cloudfront.net%2Fvideo%2Fthumbnail%2FJrbItQz%2Fglowing-futuristic-network-shape-loopable-background-4k-4096x2304_nvzq1ms0g__F0000.png&f=1 */
