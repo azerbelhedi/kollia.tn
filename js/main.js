@@ -277,6 +277,13 @@ firebase.auth().onAuthStateChanged(function(user){
 			alert("sorry ! we have a problem connetcting to your account ! please try again now") ;
 			//logout
 			logout() ;
+			loginButton = "logo in" ;
+		document.querySelector("#the-upload-button").style.display = "none" ;
+		document.querySelector(".popup").style.display = "none" ;
+		// delete data !!
+		name = "" ;
+		document.querySelector("#user-name").innerHTML = name ; 
+		document.getElementsByClassName("fixed-login")[0].innerHTML = loginButton;
 		}
 		console.log("user is connected succefuly yy : " + globalUser.name) ;
 		console.log("user is connected succefuly yy : " + globalUser.uni) ;
@@ -488,6 +495,7 @@ function uploadFile(e){
 			views : 0
 		}) ;
 		alert("file uploded ") ;
+		location.reload() ;
 	}
 	) ;
 }
@@ -564,6 +572,7 @@ function gotFiles(data){
 		});
 
 	});
+	document.querySelector("#loading").style.display = "none" ;
 
 }
 
@@ -703,3 +712,5 @@ function filter(){
 		console.log(files) ;
 	}
 }
+
+

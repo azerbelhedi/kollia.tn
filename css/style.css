@@ -472,5 +472,20 @@ body{
 	background-size: cover ;
 }
 
+.loading{
+	background-color: #88bec3 ;
+	position : fixed ;
+	height :100%;
+	width :100%;
+	top :0;
+	left :0;
+	z-index: 3 ;
+}
 
+#load-gif{
+	height :100px;
+	position: fixed ;
+	top :44%;
+	right :50%;
+}
 /*https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fd2v9y0dukr6mq2.cloudfront.net%2Fvideo%2Fthumbnail%2FJrbItQz%2Fglowing-futuristic-network-shape-loopable-background-4k-4096x2304_nvzq1ms0g__F0000.png&f=1 */
