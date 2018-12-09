@@ -277,6 +277,7 @@
 	font-weight: bold ;
 	box-shadow: 3px 3px 5px black;
 	color : #64c1e5;
+	display: none;
 }
 .fixed .round-upload button:hover{
 	color : white;	
@@ -322,6 +323,11 @@
 	padding-top :20px;
 }
 /* 992 */
+@media only screen and (min-width : 993px){
+	.stop{
+		display :none;
+	}
+}
 @media only screen and (max-width: 992px){
 	.stop{
 		background-color: #88bec3 ;
@@ -334,6 +340,7 @@
 		height :100%;
 		width :100%;
 		opacity :1 !important; 
+		display: block ;
 	}
 	.stop img{
 		margin-top :20px;
@@ -431,7 +438,7 @@
 
 .profile-name{
 	flex: 6;
-	margin-left :70px;
+	margin-left :20px;
 }
 
 .profile-name h1{

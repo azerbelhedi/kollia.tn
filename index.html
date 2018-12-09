@@ -12,12 +12,12 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="icon" href="http://pluspng.com/img-png/education-png-education-png-image-23452-520.png">
 </head>
-<body>
+<body onload = "loadData()">
 	<div class = "popup">+9</div>
 	<div class = "container-fluid all">
 		<div class = "row top">
 			<div class = "col-md-2 col-sm-4 logo">
-				<h1>KOLIA.tn</h1>
+				<h1>KOLLIA.tn</h1>
 			</div>
 			<div class = "col-md-6 col-sm-7 search-area">
 				<input type="text" placeholder="search documents and people">
@@ -31,16 +31,26 @@
 			<div class = "col-md-2 col-sm-2 col-12 menu">
 				<div class = "categories">
 					<center>
-						<h2 class = "category">university</h2>
-						<select class = "list"></select>
+						<h2 class = "category" >university</h2>
+						<select class = "list" id = "unis" onchange = "loadSchool()">
+							<option value="sousse" selected >sousse</option>
+						</select>
 						<h2 class = "category">school</h2>
-						<select class = "list"></select>
+						<select class = "list" id = "schools"></select>
 						<h2 class = "category">subject</h2>
-						<select class = "list"></select>
+						<select class = "list" id = "subject"></select>
 						<h2 class = "category">type</h2>
-						<select class = "list"></select>
+						<select class = "list">
+							<option value="serie">serie</option>
+							<option value="devoir">devoir</option>
+							<option value="cours">cours</option>
+							<option value="correction-serie">correction-serie</option>
+							<option value="correction-devoir">correction-devoir</option>
+						</select>
 						<h2 class = "category">order</h2>
-						<select class = "list"></select>
+						<select class = "list">
+							<option value="random">random</option>
+						</select>
 					</center>
 				</div>
 				<div class = "long-search">
@@ -56,8 +66,8 @@
 							<img src="azer.jpg">
 						</div>
 						<div class = "profile-name">
-							<h1>azer belhedi</h1>
-							<h4>student at issat , sousse university </h4>
+							<h1 id = "user-name">azer belhedi</h1>
+							<h4 id = "user-location">student at issat , sousse university </h4>
 							<button id = "follow-button">unfollow</button>
 						</div>
 					</div>
@@ -369,17 +379,26 @@
 							<input required type="text" id = "name">
 						</div>
 						<div class = "block">
+							<label>job<span style = "color: red">*</span> </label>
+							<select name="job" id="job">
+								<option value="student">student</option>
+								<option value="professor">professor</option>
+							</select>
+						</div>
+						<div class = "block">
 							<label>phone </label>
 							<input type="text" id = "phone">
 						</div>
 						<div class = "block-select">
 							<div class = "block">
 								<label>university</label>
-								<select id = "uni" ></select>
+								<select id = "uni" onchange="loadSchool2()">
+									<option value="sousse" selected>sousse</option>
+								</select>
 							</div>
 							<div class = "block">
 								<label>school</label>
-								<select id = "school"></select>
+								<select id = "school2"></select>
 							</div>
 						</div>
 						<div class = "block">
@@ -397,37 +416,40 @@
 			<div class = "upload-block">
 				<h1>upload document</h1>
 				<form id = "upload-form">
+					<!--
 					<div class = "block">
 						<label>file name<span style = "color: red">*</span> </label>
 						<input required type="text" id = "fileName">
 					</div>
+					-->
 					<div class = "block">
 						<label>subject<span style = "color: red">*</span> </label>
-						<select></select>
+						<select id = "other-subject"></select>
 					</div>
 					<div class = "block">
 						<label>type<span style = "color: red">*</span> </label>
-						<select></select>
-					</div>
-					<div class = "block">
-						<label>ennonce<span style = "color: red">*</span> </label>
-						<input  type="radio" id = "ennoncé">
-					</div>
-					<div class = "block">
-						<label>correction<span style = "color: red">*</span> </label>
-						<input  type="radio" id = "correction">
+						<select id = "file-types">
+							<option value="serie">serie</option>
+							<option value="devoir">devoir</option>
+							<option value="cours">cours</option>
+							<option value="correction-serie">correction-serie</option>
+							<option value="correction-devoir">correction-devoir</option>
+						</select>
 					</div>
 					<div class = "block">
 						<label>select file<span style = "color: red">*</span> </label>
-						<input  type="file" id = "file">
+						<input  type="file" id = "file" required>
 					</div>
+					<progress value = '0' max = '100' id = 'uploader'>0%</progress>
+					<!--
 					<input type="submit" value="upload" id = "upload-button">
+					-->
 				</form>
 			</div>
 		</center>
 		<div class = "fixed">
 			<div class = "round-upload">
-				<button onclick="displayUpload()">UPLOAD FILE</button>
+				<button onclick="displayUpload()" id = "the-upload-button">UPLOAD FILE</button>
 			</div>
 		</div>	
 	</div>
@@ -441,4 +463,4 @@
 </body>
 <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
 <script src = "js/main.js"></script>
-</html>
+</html>	
