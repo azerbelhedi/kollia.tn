@@ -160,15 +160,6 @@
 	margin-left :10px;
 }
 
-.doc{
-	width :180px;
-	height :310px;
-	background-color: #8dd3ef ;
-	margin :10px;	
-	box-shadow: 3px 3px 5px black;
-	opacity:1;
-}
-
 .doc2{
 	width :180px;
 	height :310px;
@@ -184,6 +175,11 @@
 	margin :0;
 	box-shadow: 3px 3px 5px black;
 	margin-bottom: 2px ;
+}
+
+.doc2 .name-and-path h2{
+	height :66px;
+	font-size: 18px ;
 }
 
 .doc2 .name-and-path h2  , h4{
@@ -212,6 +208,11 @@
 	margin-top: 5px ;
 }
 
+.doc2 .subject-type div h4{
+	font-size: 12px ;
+	font-weight: bold ;
+}
+
 .doc2 .footer h5{
 	text-align: center ;
 	margin-top: 5px; 
@@ -225,43 +226,8 @@
 	height :35px;
 }
 
-.doc .name{
-	background-color: #C4E9F5 ;
-	height :50%;
-	width :99%;
-	margin-top :15px;
-	margin-left :auto;
-	margin-right: auto ;
-	box-shadow: 3px 3px 5px black;
-}
-
-.doc .info{
-	background-color: #C4E9F5 ;
-	height :20%;
-	width :95%;
-	margin-top :15px;
-	margin-left :5px;
-	box-shadow: 3px 3px 5px black;
-}
-
-.doc .info h6{
-	margin-left :10px;
-	line-height: 7px;
-	padding-top: 5px;
-}
-
-.doc .type{
-	background-color: #C4E9F5 ;
-	height :10%;
-	width :95%;
-	margin-top :15px;
-	margin-left :5px;
-	box-shadow: 3px 3px 5px black;
-}
-
-.doc .type h2{
-	color :green;
-	font-size: 28px;
+.doc2:hover{
+	cursor: pointer;
 }
 
 .fixed .round-upload button{

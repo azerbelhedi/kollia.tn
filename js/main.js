@@ -144,8 +144,18 @@ function createAccount(e){
 			ref.push({followers : ["azerbelhedi"]}) ;
 			
 			ref = database.ref('users/' + data.user.uid + '/files') ;
-			ref.push({files : [{fileName : "fileName" , fileLink :"fileLink" , fileViews : 0}]}) ;
-
+			ref.push({
+				name : "name" ,
+				path : 'path' ,
+				userName :  'userName' ,
+				type : 'type' ,
+				uni : 'uni' ,
+				school : 'school' ,
+				subject : 'subject' ,
+				date : 'date' ,
+				views : 0 ,
+				userUid  : data.user.uid 
+			}) ;
 			// phone uni school job
 			ref = database.ref('users/' + data.user.uid + '/name') ;
 			ref.push({name : name}) ;
@@ -163,6 +173,8 @@ function createAccount(e){
 			ref = database.ref('users/' + data.user.uid + '/job') ;
 			ref.push({job : job}) ;
 		
+			ref = database.ref('users/' + data.user.uid + '/img') ;
+			ref.push({img : "src"}) ;
 
 		}).catch(function(error){
 			alert("error while signing up ! : " + error.message) ;
@@ -261,13 +273,17 @@ firebase.auth().onAuthStateChanged(function(user){
 			school : school ,
 			uid : user.uid
 		}
+		if(name == undefined || uni == undefined || school == undefined == uni == undefined){
+			alert("sorry ! we have a problem connetcting to your account ! please try again now") ;
+			//logout
+			logout() ;
+		}
 		console.log("user is connected succefuly yy : " + globalUser.name) ;
 		console.log("user is connected succefuly yy : " + globalUser.uni) ;
 		console.log("user is connected succefuly yy : " + globalUser.school) ;
 		console.log("user is connected succefuly yy : " + globalUser.uid) ;
 	}
 	else{
-		globalUser = {} ;
 		loginButton = "logo in" ;
 		document.querySelector("#the-upload-button").style.display = "none" ;
 		document.querySelector(".popup").style.display = "none" ;
@@ -428,27 +444,262 @@ function uploadFile(e){
 		console.log(subject) ;
 		console.log(data.task.metadata_.updated) ;
 		console.log(globalUser.name) ;
-
-		let haha = {h : "haha"} ;
-		console.loh(haha.h) ;
-
-		let dataOfFile = {
-			name : file.data.task.metadata_.name ,
-			path : data.task.metadata_.fullPath ,
-			userName :  globalUser.name ,
+		console.log("come on") ;
+		var name = data.task.metadata_.name  ;
+		var path = data.task.metadata_.fullPath ;
+		var userName =  globalUser.name ;
+		var uni = globalUser.uni ;
+		var school = globalUser.school ;
+		var date = data.task.metadata_.updated ;
+		console.log({
+			name : name ,
+			path : path ,
+			userName :  userName ,
 			type : type ,
-			uni : globalUser.uni ,
-			school : globalUser.school ,
+			uni : uni ,
+			school : school ,
 			subject : subject ,
-			date : data.task.metadata_.updated 
-		} ;
-		console.log(dataOfFile.school) ;
+			date : date ,
+			views : 0 
+		}) ;
 		var ref = database.ref('files') ;
-		ref.push(dataOfFile) ;
+		ref.push({
+			name : name ,
+			path : path ,
+			userName :  userName ,
+			type : type ,
+			uni : uni ,
+			school : school ,
+			subject : subject ,
+			date : date ,
+			views : 0
+		}) ;
 
 		var ref = database.ref('users/'+globalUser.uid + "/files") ;
-		ref.push(dataOfFile) ;
+		ref.push({
+			name : name ,
+			path : path ,
+			userName :  userName ,
+			type : type ,
+			uni : uni ,
+			school : school ,
+			subject : subject ,
+			date : date ,
+			views : 0
+		}) ;
 		alert("file uploded ") ;
 	}
 	) ;
+}
+
+// load files :
+var files = [] ;
+var ref = database.ref('files') ;
+ref.on('value' , gotFiles , errFiles) ;
+
+function gotFiles(data){
+	//document.querySelector("#top-docs") ='<h1 id = "top-docs">#TOP</h1>'
+	data = data.val() ;
+	var keys = Object.keys(data) ;
+	keys.map(x => {
+		console.log("file : " + data[x].path) ;
+		files.push(data[x]) ;
+	})
+	console.log(files) ;
+	// render :
+	var date_diff_indays = function(date1, date2) {
+		dt1 = new Date(date1);
+		dt2 = new Date(date2);
+		return Math.floor((Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) - Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate()) ) /(1000 * 60 * 60 * 24));
+	}
+	var i = 1 ;
+	files.map(x => {
+		//alert(i) ;
+		console.log("file" + x.name) ;
+		var d = new Date();
+		var time = date_diff_indays(x.date , d) ;
+		var id = x.name ;
+		id = id.replace(/\s/g,'');
+		//alert ("space id : " + id) ;
+		link = x.path ;
+		var name = x.userName;
+		name = name.replace(/\s/g,'');
+		name = name + "/231321" + i ; 
+		i++ ;
+		//alert('day : ' +time) ;
+		var element = document.querySelector("#top-docs") ;
+		element.outerHTML += ('  <div  class = "doc2 col-md-2 col-sm-2" id = "' + id + '" > ' +
+									'<div class = "name-and-path">'+
+										'<h2 class = "file-name"> ' + x.name + '</h2> ' +
+										'<h4> ' + x.uni + "/" + x.school + '</h4>' +
+									'</div>' +
+									'<div class = "doc2-img"> '+
+									'<img src="data:image/png;base64,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" alt="pic here"> ' +
+								'</div> ' +
+								'<div class = "subject-type">'+
+									'<div class = "type"><h4>' + x.type + '</h4></div>' +
+									'<div class = "subject"><h4>' + x.subject + '</h4></div> '+
+								'</div> '+
+								'<div class = "footer"> <h5>by <a id = "'+ name +'" href = "">' + x.userName + '</a> , ' + time+'days ago </h5></div> '+
+								'</div> ') ;
+		
+	}) ;
+
+	var i = 1 ;
+	files.map(x => {
+		var id = x.name ;
+		id = id.replace(/\s/g,'');
+		var name = x.userName;
+		name = name.replace(/\s/g,'');
+		//alert(id) ;
+		
+		name = name + "/231321" + i ; 
+		i++ ;
+		document.getElementById(name).addEventListener('click' , function(e){
+			renderOtherProfile(e , name) ;
+		});
+		document.getElementById(id).addEventListener('click' , function(e){
+			if(e.target.localName != 'a'){openFile(e , x.path) ;}
+			console.log(e.target.localName) ;
+		});
+
+	});
+
+}
+
+
+function errFiles(error){
+	console.log("error : " + error) ;
+}
+
+function openFile(e , path){
+	//e.preventDefault() ;
+	//alert(path) ;
+	// open it ;
+	var storageRef = firebase.storage().ref('') ;
+	var starsRef = storageRef.child(path) ;
+	starsRef.getDownloadURL().then(function(url){
+		window.open(url) ;
+	})
+}
+
+function renderOtherProfile(e , name){
+	e.preventDefault() ;
+	var pos = name.search("/231321") ;
+	name = name.substring(0 , pos) ;
+	//alert("profile : " + name) ;
+	var user ;
+	var ref = database.ref('users') ;
+	ref.on('value' , readUsers , errorUsers) ;
+	function errorUsers(err){
+		console.log(err) ;
+	}
+	function readUsers(data){
+		data = data.val() ;
+		var keys = Object.keys(data) ;
+		keys.map(x => {
+			//console.log(data[x].name) ;
+			localData = data[x].name ;
+			var lkeys = Object.keys(localData) ;
+			console.log(localData[lkeys[0]].name) ;
+			var theName = localData[lkeys[0]].name ;
+			theName = theName.replace(/\s/g,'');
+			console.log(theName) ;
+			if(theName == name){
+				//alert(name) ;
+				user = data[x] ;
+			}
+		});
+	}
+}
+
+
+function filter(){
+	//alert("filter") ;
+	document.querySelector(".top-docs").outerHTML = '<div class = "row top-docs" > ' +
+	'<h1 id = "top-docs">#TOP</h1>' +
+	'<hr> ' +
+	'</div>';
+	var uni = document.querySelector('#unis').value  ;
+	var school = document.querySelector('#schools').value  ;
+	var subject = document.querySelector('#subject').value  ;
+	var type = document.querySelector('#docType').value  ;
+	//alert(uni + school + subject + type ) ;
+	var files = [] ;
+	var ref = database.ref('files') ;
+	ref.on('value' , gotFiles2 , errFiles2) ;
+
+	function errFiles2(error){
+		console.log(error) ;
+	}
+
+	function gotFiles2(data){
+		data = data.val() ;
+		var keys = Object.keys(data) ;
+		keys.map(x => {
+			if(data[x].uni == uni && data[x].school == school && data[x].subject == subject && data[x].type == type ){
+				files.push(data[x]) ;
+			}
+		}) ;
+
+		// render :
+		var date_diff_indays = function(date1, date2) {
+		dt1 = new Date(date1);
+		dt2 = new Date(date2);
+		return Math.floor((Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) - Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate()) ) /(1000 * 60 * 60 * 24));
+	}
+	var i = 1 ;
+	files.map(x => {
+		//alert(i) ;
+		console.log("file" + x.name) ;
+		var d = new Date();
+		var time = date_diff_indays(x.date , d) ;
+		var id = x.name ;
+		id = id.replace(/\s/g,'');
+		//alert ("space id : " + id) ;
+		link = x.path ;
+		var name = x.userName;
+		name = name.replace(/\s/g,'');
+		name = name + "/231321" + i ; 
+		i++ ;
+		//alert('day : ' +time) ;
+		var element = document.querySelector("#top-docs") ;
+		element.outerHTML += ('  <div  class = "doc2 col-md-2 col-sm-2" id = "' + id + '" > ' +
+									'<div class = "name-and-path">'+
+										'<h2 class = "file-name"> ' + x.name + '</h2> ' +
+										'<h4> ' + x.uni + "/" + x.school + '</h4>' +
+									'</div>' +
+									'<div class = "doc2-img"> '+
+									'<img src="data:image/png;base64,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" alt="pic here"> ' +
+								'</div> ' +
+								'<div class = "subject-type">'+
+									'<div class = "type"><h4>' + x.type + '</h4></div>' +
+									'<div class = "subject"><h4>' + x.subject + '</h4></div> '+
+								'</div> '+
+								'<div class = "footer"> <h5>by <a id = "'+ name +'" href = "">' + x.userName + '</a> , ' + time+'days ago </h5></div> '+
+								'</div> ') ;
+		
+	}) ;
+	var i = 1 ;
+	files.map(x => {
+		var id = x.name ;
+		id = id.replace(/\s/g,'');
+		var name = x.userName;
+		name = name.replace(/\s/g,'');
+		//alert(id) ;
+		
+		name = name + "/231321" + i ; 
+		i++ ;
+		document.getElementById(name).addEventListener('click' , function(e){
+			renderOtherProfile(e , name) ;
+		});
+		document.getElementById(id).addEventListener('click' , function(e){
+			if(e.target.localName != 'a'){openFile(e , x.path) ;}
+			console.log(e.target.localName) ;
+		});
+
+	});
+
+		console.log(files) ;
+	}
 }
