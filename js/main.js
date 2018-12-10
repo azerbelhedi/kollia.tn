@@ -3,6 +3,8 @@ var globalUser ;
 var loginButton = "log in" ;
 // Initialize Firebase
 displayMain() ;
+renderState = "main";
+
 var config = {
     apiKey: "AIzaSyD6DClDypVl6AqFWcg2c7MUu8O56JQLaOo",
     authDomain: "flybaby-00.firebaseapp.com",
@@ -13,14 +15,14 @@ var config = {
 };
 firebase.initializeApp(config);
 var database = firebase.database() ;
- //
+logout() ;
+//
  /*
 var ref = database.ref('usersList') ;
 ref.on('value' , gotData , errData) ;
 function gotData(data){
 	console.log("here is bug data : " + data) ;
 }
-
 function errData(err){
 	console.log("zrrorra : " + err ) ;
 }
@@ -80,9 +82,10 @@ function login(e){
 	e.preventDefault();
 	let email = document.getElementById("email").value;
 	let password = document.getElementById("password").value;
-	firebase.auth().signInWithEmailAndPassword(email , password).catch(function(error){
+	firebase.auth().signInWithEmailAndPassword(email , password).then(function(data){console.log(data)}).catch(function(error){
 		alert(error) ;
-	})
+	});
+	//setTimeout(function(){} , 2000)
 	document.getElementById("login-form").reset();	
 	//alert("email : "+email + "\n pass : "+password);
 	// firebase log in 
@@ -202,6 +205,8 @@ document.getElementById("file").addEventListener('change',function(e){
 
 firebase.auth().onAuthStateChanged(function(user){
 	if(user){
+		//setTimeout(function{} , 2000) ;
+		console.log("uid ::: :: : " + user.uid ) ;
 		document.querySelector("#the-upload-button").style.display = "inline" ;
 		loginButton = "logo out" ;
 		switchLog() ;
@@ -221,7 +226,7 @@ firebase.auth().onAuthStateChanged(function(user){
 			var keys = Object.keys(data) ;
 			console.log("data log :: " + data[keys[0]].name) ;
 			name = data[keys[0]].name ;
-			document.querySelector("#user-name").innerHTML = name ;
+			//document.querySelector("#user-name").innerHTML = name ;
 		}
 		ref.on('value' , gotName , errName) ;
 
@@ -232,7 +237,7 @@ firebase.auth().onAuthStateChanged(function(user){
 			data = data.val() ;
 			var keys = Object.keys(data) ;
 			job = data[keys[0]].job ;
-			document.querySelector("#user-location").innerHTML = job ;
+			//document.querySelector("#user-location").innerHTML = job ;
 		}
 		function errJob(error){
 			console.log("error : " + error) ;
@@ -246,7 +251,7 @@ firebase.auth().onAuthStateChanged(function(user){
 			data = data.val() ;
 			var keys = Object.keys(data) ;
 			uni = data[keys[0]].uni ;
-			document.querySelector("#user-location").innerHTML += (" at " + uni) ;
+			//document.querySelector("#user-location").innerHTML += (" at " + uni) ;
 		}	
 		function errUni(error){
 			console.log(error) ;
@@ -260,43 +265,45 @@ firebase.auth().onAuthStateChanged(function(user){
 			data = data.val() ;
 			var keys = Object.keys(data) ;
 			school = data[keys[0]].school ;
-			document.querySelector("#user-location").innerHTML += ( "/" + school) ;
+			//document.querySelector("#user-location").innerHTML += ( "/" + school) ;
+			globalUser = {
+				name : name ,
+				uni : uni ,
+				school : school ,
+				uid : user.uid
+			}
+			console.log("salem alhiko" + uni + school + name + user.uid ) ;
+			if(name == undefined || uni == undefined || school == undefined || user.uid == undefined){
+				alert("sorry ! we have a problem connetcting to your account ! please try again now") ;
+				//logout
+				logout() ;
+				loginButton = "logo in" ;
+			document.querySelector("#the-upload-button").style.display = "none" ;
+			document.querySelector(".popup").style.display = "none" ;
+			// delete data !!
+			name = "" ;
+			//document.querySelector("#user-name").innerHTML = name ; 
+			document.getElementsByClassName("fixed-login")[0].innerHTML = loginButton;
+			}
+			console.log("user is connected succefuly yy : " + globalUser.name) ;
+			console.log("user is connected succefuly yy : " + globalUser.uni) ;
+			console.log("user is connected succefuly yy : " + globalUser.school) ;
+			console.log("user is connected succefuly yy : " + globalUser.uid) ;
+	
 		}
 		function errSchool(err){
 			console.log(err) ;
 		}
 		ref.on('value' , gotSchool , errSchool) ;
 		// load profile ;
-		globalUser = {
-			name : name ,
-			uni : uni ,
-			school : school ,
-			uid : user.uid
-		}
-		if(name == undefined || uni == undefined || school == undefined == uni == undefined){
-			alert("sorry ! we have a problem connetcting to your account ! please try again now") ;
-			//logout
-			logout() ;
-			loginButton = "logo in" ;
-		document.querySelector("#the-upload-button").style.display = "none" ;
-		document.querySelector(".popup").style.display = "none" ;
-		// delete data !!
-		name = "" ;
-		document.querySelector("#user-name").innerHTML = name ; 
-		document.getElementsByClassName("fixed-login")[0].innerHTML = loginButton;
-		}
-		console.log("user is connected succefuly yy : " + globalUser.name) ;
-		console.log("user is connected succefuly yy : " + globalUser.uni) ;
-		console.log("user is connected succefuly yy : " + globalUser.school) ;
-		console.log("user is connected succefuly yy : " + globalUser.uid) ;
-	}
+			}
 	else{
 		loginButton = "logo in" ;
 		document.querySelector("#the-upload-button").style.display = "none" ;
 		document.querySelector(".popup").style.display = "none" ;
 		// delete data !!
 		name = "" ;
-		document.querySelector("#user-name").innerHTML = name ; 
+		//document.querySelector("#user-name").innerHTML = name ; 
 	}
 	document.getElementsByClassName("fixed-login")[0].innerHTML = loginButton;
 	//switchLog();
@@ -306,6 +313,9 @@ function logout(){
     firebase.auth().signOut().then(function(){
 		// mrigel 
 		//switchLog();
+		// last chance !! 
+			document.querySelector(".main").style.display = "block" ;
+		//
 		console.log("outttt") ;
     } , function(error){
         alert(error) ;
@@ -712,5 +722,3 @@ function filter(){
 		console.log(files) ;
 	}
 }
-
-
