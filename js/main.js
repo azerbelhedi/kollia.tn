@@ -598,8 +598,15 @@ function openFile(e , path){
 	var storageRef = firebase.storage().ref('') ;
 	var starsRef = storageRef.child(path) ;
 	starsRef.getDownloadURL().then(function(url){
-		window.open(url) ;
-	})
+		//window.open(url) ;
+
+	// delete iframe link 
+		document.querySelector("#doc-iframe").src = "" ;
+	// display iframe
+		document.querySelector("#doc-section").style.display = "block" ;
+	// add iframe link 	
+		document.querySelector("#doc-iframe").src = url ;
+});
 }
 
 function renderOtherProfile(e , name){
@@ -721,4 +728,10 @@ function filter(){
 
 		console.log(files) ;
 	}
+}
+
+
+function closeFile(){
+	document.querySelector("#doc-section").style.display = "none" ;
+	document.querySelector("#doc-iframe").src = "" ;
 }

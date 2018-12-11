@@ -23,7 +23,7 @@
 				<input type="text" placeholder="search documents and people">
 			</div>
 			<div class = "col-md-3 col-sm-12 search-button">
-				<button>search</button>
+				<button id = "not-search-button">search</button>
 				<div class = "fixed-login" onclick="switchLog()">login </div>
 			</div>
 		</div>
@@ -226,6 +226,14 @@
 	<div class = "loading" id = "loading">
 		<img id =  "load-gif"src="https://www.growingagreenerworld.com/wp-content/uploads/2015/03/loading.gif" alt="">
 	</div>
+	<div id = "doc-section">
+		<div id = "doc-viewer" onclick = "closeFile()">	</div>
+	<center>
+		<iframe id = "doc-iframe" src="" frameborder="0"></iframe>
+	</center>
+	<img onclick = "closeFile()" id = "close-div" src="http://www.sm-properties.com/wp-content/plugins/lightbox-slider/images/Close-icon.png" alt="">
+	</div>
+	
 </body>
 <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
 <script src = "js/main.js"></script>

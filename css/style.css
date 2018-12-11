@@ -26,12 +26,17 @@
 .search-area{
 	/*background-color :yellow;*/
 	height :50px;
+	display: none;
 }
 
 .search-button{
 	/*background-color :grey;*/
 	height :50px;
 }	
+
+#not-search-button{
+	display: none;
+}
 
 .main{
 	/*background-color: green ; */
@@ -210,7 +215,8 @@
 
 .doc2 .subject-type div h4{
 	font-size: 12px ;
-	font-weight: bold ;
+	font-weight:bolder ;
+	color :green;
 }
 
 .doc2 .footer h5{
@@ -374,6 +380,7 @@
 	font-size: 35px;
 	font-weight: bold ;
 	display: none ;
+	opacity: 0;
 }
 
 
@@ -479,7 +486,7 @@ body{
 	width :100%;
 	top :0;
 	left :0;
-	z-index: 3 ;
+	z-index: 10 ;
 }
 
 #load-gif{
@@ -487,5 +494,44 @@ body{
 	position: fixed ;
 	top :44%;
 	right :50%;
+}
+
+#doc-viewer{
+	position: fixed;
+	top :0px;
+	right :0px;
+	height :100%;
+	width :100%;
+	z-index: 5;
+	opacity: 0.7;
+	background-color :black;
+}
+
+#doc-iframe{
+	position: fixed;
+	top :0px;
+	left :10%;
+	z-index: 6;
+	height :100%;
+	width :80%;
+}
+
+
+
+#close-div{
+	position : fixed;
+	top :0; 
+	right :0;
+	z-index: 7;
+	height :40px;
+	width :40px;
+}
+
+#close-div:hover{
+	cursor: pointer;
+}
+
+#doc-section{
+	display: none;
 }
 /*https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fd2v9y0dukr6mq2.cloudfront.net%2Fvideo%2Fthumbnail%2FJrbItQz%2Fglowing-futuristic-network-shape-loopable-background-4k-4096x2304_nvzq1ms0g__F0000.png&f=1 */
