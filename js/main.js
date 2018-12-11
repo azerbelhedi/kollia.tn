@@ -536,7 +536,7 @@ function gotFiles(data){
 		console.log("file" + x.name) ;
 		var d = new Date();
 		var time = date_diff_indays(x.date , d) ;
-		var id = x.name ;
+		var id = x.name+i ;
 		id = id.replace(/\s/g,'');
 		//alert ("space id : " + id) ;
 		link = x.path ;
@@ -565,7 +565,7 @@ function gotFiles(data){
 
 	var i = 1 ;
 	files.map(x => {
-		var id = x.name ;
+		var id = x.name +i ;
 		id = id.replace(/\s/g,'');
 		var name = x.userName;
 		name = name.replace(/\s/g,'');
@@ -579,6 +579,7 @@ function gotFiles(data){
 		document.getElementById(id).addEventListener('click' , function(e){
 			if(e.target.localName != 'a'){openFile(e , x.path) ;}
 			console.log(e.target.localName) ;
+			console.log(x) ;
 		});
 
 	});
