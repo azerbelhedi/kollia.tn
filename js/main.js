@@ -734,5 +734,9 @@ function filter(){
 
 function closeFile(){
 	document.querySelector("#doc-section").style.display = "none" ;
-	document.querySelector("#doc-iframe").src = "" ;
+	document.querySelector("#doc-iframe").src = "" ;	
 }
+
+document.addEventListener('keypress' , (e) => {
+	if(e.key == 'Escape'){closeFile() ;}
+})
