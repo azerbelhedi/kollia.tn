@@ -10,7 +10,7 @@
 
 .top{
 	/*background-color: red; */
-	box-shadow: 3px 3px 5px black;
+	box-shadow: 1px 1px 7px black;
 	background-color: #88bec3;
 	/*/a/a/a/a/a//anow-----------*/
 	position: fixed;
@@ -49,12 +49,11 @@
 .menu{
 	/*background-color: yellow;*/
 	height :100%;
-	border: solid 2px black ;
 	border-left :none;
-	box-shadow: 3px 3px 5px black;
+	box-shadow: 1px 1px 7px black;
 	 /*margin-left :5px; */
 	margin-right: 10px ;
-	/*margin-top :10px; */
+	margin-top :2px; 
 	background-color: #88bec3;
 	position:fixed;
 	z-index: 3;
@@ -114,6 +113,10 @@
 .categories{
 	height: 80%;
 	margin-top :10px;
+} /* h2*/
+
+.categories h2 {
+	font-size: 25px ;
 }
 
 .long-search{
@@ -152,13 +155,13 @@
 	min-height: 530px;
 	margin :15px;
 	margin-top :10px; 
-	border: solid 2px black ;
+	/*border: solid 2px black ;
 	box-shadow: 3px 3px 5px black;
-	background-color :#BFE3E3;
+	background-color :#BFE3E3;*/
 	position: absolute;
 	right :10px;
 	width: 80%;
-	opacity: 0.9;
+	opacity: 1;
 }
 
 .top-docs , .new-docs , .follow-docs , .res-docs{
@@ -167,24 +170,30 @@
 
 .doc2{
 	width :180px;
-	height :310px;
-	background-color: #8dd3ef ;
+	height :210px;
+	background-color:rgb(215, 232, 233) ;
 	margin :10px;	
-	box-shadow: 3px 3px 5px black;
+	box-shadow: 1px 0px 7px black;
 	opacity:1;
 	padding: 0 ;
+}
+
+.doc2:hover{
+	box-shadow: 1px 0px 15px black;
 }
 
 .doc2 .name-and-path{
 	width :100%;
 	margin :0;
-	box-shadow: 3px 3px 5px black;
+	/*box-shadow: 1px 1px 5px black;*/
 	margin-bottom: 2px ;
 }
 
 .doc2 .name-and-path h2{
+	padding-top :10px;
 	height :66px;
 	font-size: 18px ;
+	font-weight: bold ;
 }
 
 .doc2 .name-and-path h2  , h4{
@@ -202,10 +211,10 @@
 	margin-bottom: 2px ;
 }
 .doc2 .subject-type{
-	display: flex ;
-	box-shadow: 3px 3px 5px black;
-	margin-bottom: 2px ;
-	height :30px;
+	background-color: #8dd3ef ;
+	display: block ;
+	/*box-shadow: 1px 1px 5px black;*/
+	height :80px;
 }
 
 .doc2 .subject-type > div{
@@ -214,9 +223,10 @@
 }
 
 .doc2 .subject-type div h4{
-	font-size: 12px ;
+	padding-top :10px;
+	font-size: 20px ;
 	font-weight:bolder ;
-	color :green;
+	/*color :green;*/
 }
 
 .doc2 .footer h5{
@@ -227,7 +237,7 @@
 }
 
 .doc2 .footer{
-	box-shadow: 3px 3px 5px black;
+	/*box-shadow: 3px 3px 5px black;*/
 	margin-bottom: 2px ;
 	height :35px;
 }
@@ -475,8 +485,9 @@ button:hover{
 }
 
 body{
-	background-image: url("../back.png");
-	background-size: cover ;
+	/*background-image: url("../back.png");
+	background-size: cover ;*/
+	background-color: rgb(230, 240, 253) ;
 }
 
 .loading{
