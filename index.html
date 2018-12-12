@@ -16,8 +16,10 @@
 	<div class = "popup">+9</div>
 	<div class = "container-fluid all">
 		<div class = "row top">
-			<div class = "col-md-2 col-sm-4 logo">
-				<h1>KOLLIA.tn</h1>
+			<div class = "col-md-2 col-sm-4 logo" onclick = "refresh()">
+				<center>
+					<h1>Kollia.tn</h1>
+				</center>
 			</div>
 			<div class = "col-md-6 col-sm-7 search-area">
 				<input type="text" placeholder="search documents and people">
@@ -113,8 +115,8 @@
 		</div>
 		<center>
 			<div class = "log-block">
-				<h1 id = "login-title">log in</h1>
 				<div class = "login">
+					<h1 id = "login-title">log in</h1>
 					<form id = "login-form">
 						<div class = "block">
 							<label>email<span style = "color: red">*</span> </label>
@@ -126,10 +128,10 @@
 						</div>
 						<input type="submit" value="login" id ="login-button">
 					</form>
+					<hr id = "hr1">
 				</div>
-				<hr>
-				<h1>or sign up</h1>
 				<div class = "signup">
+					<h1>or sign up</h1>
 					<form id = "signup-form">
 						<div class = "block">
 							<label>email<span style = "color: red">*</span> </label>
@@ -199,6 +201,22 @@
 							<option value="correction-devoir">correction-devoir</option>
 						</select>
 					</div>
+					<div class = block>
+						<label>field<span style = "color: red">*</span> </label>
+						<select id="field">
+							<option  selected value="prepa integree">prepa integree</option>
+							<option value="bachelor">bachelor</option>
+							<option value="master">master</option>
+						</select>
+					</div>
+					<div class = block>
+						<label>level<span style = "color: red">*</span> </label>
+						<select id="level">
+							<option selected value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+					</div>
 					<div class = "block">
 						<label>select file<span style = "color: red">*</span> </label>
 						<input  type="file" id = "file" required>
@@ -212,7 +230,7 @@
 		</center>
 		<div class = "fixed">
 			<div class = "round-upload">
-				<button onclick="displayUpload()" id = "the-upload-button">UPLOAD FILE</button>
+				<button onclick="displayUpload()" id = "the-upload-button">upload file</button>
 			</div>
 		</div>	
 	</div>
@@ -228,10 +246,11 @@
 	</div>
 	<div id = "doc-section">
 		<div id = "doc-viewer" onclick = "closeFile()">	</div>
-	<center>
-		<iframe id = "doc-iframe" src="" frameborder="0"></iframe>
-	</center>
-	<img onclick = "closeFile()" id = "close-div" src="http://www.sm-properties.com/wp-content/plugins/lightbox-slider/images/Close-icon.png" alt="">
+		<center>
+			<iframe id = "doc-iframe" src="" frameborder="0"></iframe>
+		</center>
+		<img onclick = "closeFile()" id = "close-div" src="http://www.sm-properties.com/wp-content/plugins/lightbox-slider/images/Close-icon.png" alt="">
+		<button id = "report-file">report file</button>
 	</div>
 	
 </body>

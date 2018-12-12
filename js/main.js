@@ -770,4 +770,8 @@ function closeFile(){
 
 document.addEventListener('keypress' , (e) => {
 	if(e.key == 'Escape'){closeFile() ;}
-})
+});
+
+function refresh(){
+	location.reload();
+}

@@ -11,7 +11,7 @@
 .top{
 	/*background-color: red; */
 	box-shadow: 1px 1px 7px black;
-	background-color: #88bec3;
+	background-color: #132238;
 	/*/a/a/a/a/a//anow-----------*/
 	position: fixed;
 	z-index: 3;
@@ -19,8 +19,12 @@
 }
 
 .logo{
-	/*background-color :green;*/
+	background-color :#132238;
 	height :50px;
+}
+.logo:hover{
+	background-color :#273955;
+	cursor: pointer;
 }
 
 .search-area{
@@ -54,19 +58,18 @@
 	 /*margin-left :5px; */
 	margin-right: 10px ;
 	margin-top :2px; 
-	background-color: #88bec3;
+	background-color: #364e68;
 	position:fixed;
 	z-index: 3;
 }
 
 .logo h1{
-	font-size: 28px;
+	font-size: 30px;
 	margin-top:10px;
 	margin-left :0px;
 	margin-right :0px;
-	color : #2e3b55;
-	text-shadow: 2px 2px 3px black;
-	font-weight: bold;
+	color : #98ccd3;
+	font-weight: bolder;
 }
 
 .search-area input{
@@ -116,20 +119,22 @@
 } /* h2*/
 
 .categories h2 {
-	font-size: 25px ;
+	font-size: 23px ;
+	padding :0;
+	margin-top :5px;
 }
 
 .long-search{
 	/*background-color: grey ;*/
 	height :10%;
 	margin-top :10px;
+	margin-bottom: 50px ;
 }
 
 .category{
-	color :#2e3b54;
+	color :white;
 	font-weight: bold;
-	text-shadow: 2px 2px 2px black;
-
+	text-shadow: 1px 1px 10px black;
 }
 
 .list{
@@ -137,14 +142,19 @@
 }
 
 .long-search button{
-	width :80%;
-	height :30px;
+	width :100%;
+	height :40px;
 	border :none;
-	color: #64c1e5;	
-	font-weight: bold;
-	font-size: 20px;
-	box-shadow: 3px 3px 5px black;
-	background-color :#2e3b55;
+	color: white;	
+	font-weight: bolder;
+	font-size: 25px;
+	box-shadow: 1px 1px 10px black;
+	background-color :#132238;
+}
+
+.long-search button:hover{
+	background-color :#26364e;
+
 }
 
 .long-search button:hover{
@@ -248,32 +258,52 @@
 
 .fixed .round-upload button{
 	position: fixed;
-	bottom: 10px;
-	right: 35px;
-	height: 40px;
+	top: 0px;
+	right: 160px;
+	height: 50px;
 	width :200px;
 	border: none;
-	background-color: #2e3b55;
+	background-color: #132238;
 	color :white;
-	font-size: 25px;
-	font-weight: bold ;
-	box-shadow: 3px 3px 5px black;
-	color : #64c1e5;
+	font-size: 20px;
+	font-weight: bolder;
 	display: none;
+	z-index: 3;
 }
 .fixed .round-upload button:hover{
-	color : white;	
+	background-color : #273852;	
+}
+
+.log-block h1{
+	color :#ebf0f6;
+	font-weight: bolder ;
 }
 
 .log-block{
 	display: none ;
-	min-height: 700px ;
-	background-color: red ;
 	width :60%;
 	margin-top: 62px;
-	background-color: #BFE3E3;
+	margin-bottom: 15px ;
 	opacity: 0.9;
 	box-shadow: 3px 3px 5px black;
+}
+
+.login{
+	background-color: #364e68 ;
+}
+
+.signup{
+	background-color: #243547 ;
+}
+
+.signup h1{
+	margin-top :0px;
+}
+
+#hr1{
+	height :1px;
+	margin: 0;
+	padding: 0;
 }
 
 .block{
@@ -286,6 +316,7 @@
 	font-size: 25px;
 	margin-top: 5px;
 	margin-bottom: 5px;
+	color :white;
 }
 
 .block input{
@@ -299,7 +330,18 @@
 
 #signup-button , #login-button{
 	margin-top :20px;
+	margin-bottom: 15px ;
+	background-color: #132238 ;
+	height :30px;
+	width :120px;
+	border :none;
+	box-shadow: 1px 1px 10px black ;
+	color :white;
+	font-weight: bold ;
 } 
+#signup-button:hover , #login-button:hover{
+	background-color: #2d405c
+}
 
 #login-title{
 	padding-top :20px;
@@ -342,36 +384,41 @@
 
 .upload-block{
 	display: none ;
-	min-height: 700px ;
-	background-color: red ;
+	min-height: 500px ;
 	width :60%;
 	margin-top: 62px;
-	background-color: #BFE3E3;
-	opacity: 0.9;
+	background-color: #364e68;
+	opacity: 1;
 	box-shadow: 3px 3px 5px black;
+}
+
+.upload-block h1{
+	padding-top :30px;
+	margin-bottom: 20px ;
+	color :#ebf0f6;
+	font-weight: bolder ;
 }
 
 /* class = log*/
 .fixed-login{
 	position: fixed ;
-	top :10px;
-	right :40px;
+	top :0px;
+	right :0px;
 	z-index: 4;
-	height: 30px;
-	width :120px;
+	height: 50px;
+	width :160px;
 	border: none;
-	background-color: #2e3b55;
+	background-color: #132238;
 	color :white;
-	font-size: 18px;
-	font-weight: bold ;
-	box-shadow: 3px 3px 5px black;
-	color : #64c1e5;
+	font-size: 20px;
+	font-weight: bolder ;
 	text-align: center ;
-	padding-top: 5px;
+	padding-top: 10px;
 }
 
 .fixed-login:hover{
-	color: white ;
+	background-color: #273852 ;
+	cursor: pointer;
 }
 
 .popup{
@@ -487,7 +534,7 @@ button:hover{
 body{
 	/*background-image: url("../back.png");
 	background-size: cover ;*/
-	background-color: rgb(230, 240, 253) ;
+	background-color: #ebf0f6 ;
 }
 
 .loading{
@@ -544,5 +591,19 @@ body{
 
 #doc-section{
 	display: none;
+}
+
+#report-file{
+	position: fixed;
+	bottom :10px;
+	left :10px;
+	background-color :#63261b;
+	height :40px;
+	width :120px;
+	z-index :6;
+	font-weight: bold ;
+	color :white;
+	border :none;
+	font-size: 25px ;
 }
 /*https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fd2v9y0dukr6mq2.cloudfront.net%2Fvideo%2Fthumbnail%2FJrbItQz%2Fglowing-futuristic-network-shape-loopable-background-4k-4096x2304_nvzq1ms0g__F0000.png&f=1 */
