@@ -605,6 +605,7 @@ body{
 	color :white;
 	border :none;
 	font-size: 25px ;
+	display :none; 
 }
 
 .report-alert{
