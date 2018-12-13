@@ -253,6 +253,29 @@
 		<button id = "report-file">report file</button>
 	</div>
 	
+	<div class = "report-alert">
+		<center>
+			<div id = "report-alert-inner">
+				<h2 id = "report-data">your're reporting  '________' file added by '_______' !</h2>
+				<hr>
+				<label> reason : </label>
+				<select id="report-reason">
+					<option value="copyrights">copyrights</option>
+					<option value="wrong information">wrong information</option>
+					<option value="inappropriate content">inappropriate content</option>
+				</select>
+				<hr>
+				<label>more details (optional)</label>
+				<br>
+				<textarea id="more-report-details" cols="100" rows="10" ></textarea>
+				<br>
+				<button>submit report</button>
+				<button>cancel</button>
+			</div>	
+		</center>
+	</div>
+
+	
 </body>
 <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
 <script src = "js/main.js"></script>
