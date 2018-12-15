@@ -1,3 +1,6 @@
+/* Importing fonts from fonts.google.com to use them my web page */
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Questrial|Ropa+Sans');
+
 *{
 	margin :0;
 	padding :0;
@@ -136,6 +139,7 @@
 	color :white;
 	font-weight: bold;
 	text-shadow: 1px 1px 10px black;
+	font-family: 'Bree Serif', serif;
 }
 
 .list{
@@ -153,6 +157,7 @@
 	box-shadow: 1px 1px 10px black;
 	background-color :#132238;
 	margin-top:10px;
+	font-family: 'Bree Serif', serif;
 }
 
 .long-search button:hover{
@@ -208,6 +213,7 @@
 .doc2 .name-and-path h2  , h4{
 	margin :0;
 	text-align: center ;
+	
 }
 
 .doc2 .doc2-img img{
@@ -237,6 +243,7 @@
 	font-size: 20px ;
 	font-weight:bolder ;
 	/*color :green;*/
+	font-family: 'Bree Serif', serif;
 }
 
 .doc2 .footer h5{
@@ -269,6 +276,7 @@
 	font-weight: bolder;
 	display: none;
 	z-index: 3;
+	font-family: 'Bree Serif', serif;
 }
 .fixed .round-upload button:hover{
 	background-color : #273852;	
@@ -298,6 +306,7 @@
 
 .signup h1{
 	margin-top :0px;
+	font-family: 'Bree Serif', serif;
 }
 
 #hr1{
@@ -317,6 +326,7 @@
 	margin-top: 5px;
 	margin-bottom: 5px;
 	color :white;
+	font-family: 'Bree Serif', serif;
 }
 
 .block input{
@@ -345,6 +355,7 @@
 
 #login-title{
 	padding-top :20px;
+	font-family: 'Bree Serif', serif;
 }
 /* 992 */
 @media only screen and (min-width : 993px){
@@ -397,6 +408,8 @@
 	margin-bottom: 20px ;
 	color :#ebf0f6;
 	font-weight: bolder ;
+	font-family: 'Bree Serif', serif;
+	text-shadow: 1px 1px 5px black ;
 }
 
 /* class = log*/
@@ -414,6 +427,7 @@
 	font-weight: bolder ;
 	text-align: center ;
 	padding-top: 10px;
+	font-family: 'Bree Serif', serif;
 }
 
 .fixed-login:hover{
@@ -560,7 +574,7 @@ body{
 	height :100px;
 	margin-left :auto;
 	margin-right :auto;
-	margin-top :270px;
+	margin-top :20px;
 
 	border: 16px solid #ebf0f6;
 	border-radius: 50%;
@@ -693,4 +707,16 @@ body{
 	margin :5px;
 	border-top :1px solid #132238;
  }
+
+#silogo{
+	height :50px;
+	width: 200px ;
+}
+
+#loading-logo{
+	height: 100px ;
+	width :100px;
+	margin-left :auto;
+	margin-right :auto;
+}
 /*https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fd2v9y0dukr6mq2.cloudfront.net%2Fvideo%2Fthumbnail%2FJrbItQz%2Fglowing-futuristic-network-shape-loopable-background-4k-4096x2304_nvzq1ms0g__F0000.png&f=1 */

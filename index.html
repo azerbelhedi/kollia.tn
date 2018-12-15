@@ -18,7 +18,8 @@
 		<div class = "row top">
 			<div class = "col-md-2 col-sm-4 logo" onclick = "refresh()">
 				<center>
-					<h1>Kollia.tn</h1>
+					<!-- <h1>Kollia.tn</h1> -->
+					<img src="kollia.png" id = "silogo">
 				</center>
 			</div>
 			<div class = "col-md-6 col-sm-7 search-area">
@@ -58,7 +59,7 @@
 							<option value="test-correction">test-correction</option>
 						</select>
 						<hr class = "small-hr">
-						<h2 class = "category">track</h2>
+						<h2 class = "category">Track</h2>
 						<select class = "list" id = "track-filter">
 							<option value="all">all</option>
 							<option  selected value="prepa integree">integrated preparatory</option>
@@ -66,7 +67,7 @@
 							<option value="master">master</option>
 						</select>
 						<hr class = "small-hr">
-						<h2 class = "category">level</h2>
+						<h2 class = "category">Level</h2>
 						<select class = "list" id = "level-filter">
 							<option value="all">all</option>
 							<option value="1">1</option>
@@ -270,6 +271,9 @@
 	<div class = "loading" id = "loading">
 		<div id="load-gif"></div>
 		<h1>Loading kollia.tn</h1>
+		<center>
+			<img src="kollia2.png" alt="" id = "laoding-logo">
+		</center>	
 	</div>
 	<div id = "doc-section">
 		<div id = "doc-viewer" onclick = "closeFile()">	</div>
