@@ -35,19 +35,24 @@
 					<center>
 						<h2 class = "category" >University</h2>
 						<select class = "list" id = "unis" onchange = "loadSchool()">
-							<option value="sousse" selected >sousse</option>
+							<option value="all">all</option>
 						</select>
 						<h2 class = "category">School</h2>
-						<select class = "list" id = "schools"></select>
+						<select class = "list" id = "schools">
+							<option value="all">all</option>
+						</select>
 						<h2 class = "category">Subject</h2>
-						<select class = "list" id = "subject"></select>
+						<select class = "list" id = "subject">
+							<option value="all">all</option>
+						</select>
 						<h2 class = "category">Type</h2>
 						<select class = "list" id = 'docType'>
-							<option value="serie">serie</option>
-							<option value="devoir">devoir</option>
-							<option value="cours">cours</option>
-							<option value="correction-serie">correction-serie</option>
-							<option value="correction-devoir">correction-devoir</option>
+							<option selected  value="all">all</option>
+							<option value="exercices">exercices</option>
+							<option value="test">test</option>
+							<option value="course">course</option>
+							<option value="exercices-correction">exercices-correction</option>
+							<option value="test-correction">test-correction</option>
 						</select>
 						<h2 class = "category">order</h2>
 						<select class = "list">
@@ -58,6 +63,7 @@
 				<div class = "long-search">
 					<center>
 						<button onclick = "filter()">search</button>
+						<button onclick = "resetFilter()">reset</button>
 					</center>
 				</div>
 			</div>
@@ -194,17 +200,17 @@
 					<div class = "block">
 						<label>type<span style = "color: red">*</span> </label>
 						<select id = "file-types">
-							<option value="serie">serie</option>
-							<option value="devoir">devoir</option>
-							<option value="cours">cours</option>
-							<option value="correction-serie">correction-serie</option>
-							<option value="correction-devoir">correction-devoir</option>
+							<option value="exercices">exercices</option>
+							<option value="test">test</option>
+							<option value="course">course</option>
+							<option value="exercices-correction">exercices-correction</option>
+							<option value="test-correction">test-correction</option>
 						</select>
 					</div>
 					<div class = block>
-						<label>field<span style = "color: red">*</span> </label>
+						<label>track<span style = "color: red">*</span> </label>
 						<select id="field">
-							<option  selected value="prepa integree">prepa integree</option>
+							<option  selected value="prepa integree">integrated preparatory</option>
 							<option value="bachelor">bachelor</option>
 							<option value="master">master</option>
 						</select>
@@ -242,7 +248,8 @@
 		<h3>stop using it and go back to study . </h3>
 	</div>
 	<div class = "loading" id = "loading">
-		<img id =  "load-gif"src="https://www.growingagreenerworld.com/wp-content/uploads/2015/03/loading.gif" alt="">
+		<div id="load-gif"></div>
+		<h1>Loading kollia.tn</h1>
 	</div>
 	<div id = "doc-section">
 		<div id = "doc-viewer" onclick = "closeFile()">	</div>
@@ -250,13 +257,13 @@
 			<iframe id = "doc-iframe" src="" frameborder="0"></iframe>
 		</center>
 		<img onclick = "closeFile()" id = "close-div" src="http://www.sm-properties.com/wp-content/plugins/lightbox-slider/images/Close-icon.png" alt="">
-		<button id = "report-file">report file</button>
+		<button id = "report-file" onclick = "displayReport()">report file</button>
 	</div>
 	
 	<div class = "report-alert">
 		<center>
 			<div id = "report-alert-inner">
-				<h2 id = "report-data">your're reporting  '________' file added by '_______' !</h2>
+				<h2 id = "report-data">your're reporting  '<span id = report-file-name></span>' file added by '<span id = "report-user-name"></span>' !</h2>
 				<hr>
 				<label> reason : </label>
 				<select id="report-reason">
@@ -264,13 +271,13 @@
 					<option value="wrong information">wrong information</option>
 					<option value="inappropriate content">inappropriate content</option>
 				</select>
-				<hr>
+				<br>
 				<label>more details (optional)</label>
 				<br>
-				<textarea id="more-report-details" cols="100" rows="10" ></textarea>
+				<textarea id="more-report-details" cols="80" rows="5" ></textarea>
 				<br>
-				<button>submit report</button>
-				<button>cancel</button>
+				<button id = "report-send-button">submit report</button>
+				<button onclick = "cancelReport()">cancel</button>
 			</div>	
 		</center>
 	</div>

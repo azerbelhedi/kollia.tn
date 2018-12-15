@@ -541,19 +541,19 @@ function gotFiles(data){
 		console.log("file" + x.name) ;
 		var d = new Date();
 		var color = "grey" ;
-		if(x.type == "serie"){
+		if(x.type == "exercices"){
 			color = "#f2ec82" ;
 		}
-		else if(x.type == "devoir"){
+		else if(x.type == "test"){
 			color = "#f7b688" ;	
 		}
-		else if(x.type == "cours"){
+		else if(x.type == "course"){
 			color = "#90ff8e" ;	
 		}
-		else if(x.type == "correction-serie"){
+		else if(x.type == "exercices-correction"){
 			color = "#f79283" ;	
 		}
-		else if(x.type == "correction-devoir"){
+		else if(x.type == "test-correction"){
 			color = "#f79283" ;	
 		}
 		var time = date_diff_indays(x.date , d) ;
@@ -569,8 +569,8 @@ function gotFiles(data){
 		var element = document.querySelector("#top-docs") ;
 		element.outerHTML += ('  <div  class = "doc2 col-md-2 col-sm-2" id = "' + id + '" > ' +
 									'<div class = "subject-type" style = "background-color : '+color+'"> <center>'+
-									'<div class = "type"><h4>' + x.type + '</h4></div>' +
-									'<div class = "subject"><h4>' + x.subject + '</h4></div> '+
+										'<div class = "type"><h4>' + x.type + '</h4></div>' +
+										'<div class = "subject"><h4>' + x.subject + '</h4></div> '+
 								'</center> </div> ' +
 									'<div class = "name-and-path">'+
 										'<h2 class = "file-name"> ' + x.name + '</h2> ' +
@@ -598,7 +598,7 @@ function gotFiles(data){
 			renderOtherProfile(e , name) ;
 		});
 		document.getElementById(id).addEventListener('click' , function(e){
-			if(e.target.localName != 'a'){openFile(e , x.path) ;}
+			if(e.target.localName != 'a'){openFile(e ,x , x.path) ;}
 			console.log(e.target.localName) ;
 			console.log(x) ;
 		});
@@ -613,8 +613,18 @@ function errFiles(error){
 	console.log("error : " + error) ;
 }
 
-function openFile(e , path){
+function openFile(e , x , path){
 	// delete iframe link 
+	document.querySelector("#report-file-name").innerHTML = x.name ;
+	document.querySelector("#report-user-name").innerHTML = x.userName ;
+	document.querySelector("#more-report-details").value = "" ;
+	document.querySelector("#report-send-button").addEventListener('click' , function(e){
+		e.preventDefault() ;
+		var reason = document.querySelector("#report-reason").value ;
+		var details = document.querySelector("#more-report-details").value ;
+		reportFile(x.name , x.userName , reason , path , details) ;
+		cancelReport() ;
+	});
 	document.querySelector("#doc-iframe").src = "" ;
 	// display iframe
 	document.querySelector("#doc-section").style.display = "block" ;
@@ -626,7 +636,7 @@ function openFile(e , path){
 	starsRef.getDownloadURL().then(function(url){
 		//window.open(url) ;	
 	// add iframe link 	
-		document.querySelector("#doc-iframe").src = url ;
+	document.querySelector("#doc-iframe").src = url ;
 });
 }
 
@@ -684,7 +694,7 @@ function filter(){
 		data = data.val() ;
 		var keys = Object.keys(data) ;
 		keys.map(x => {
-			if(data[x].uni == uni && data[x].school == school && data[x].subject == subject && data[x].type == type ){
+			if((data[x].uni == uni || uni == "all") && (data[x].school == school || school == "all") && (data[x].subject == subject || subject == "all") && (data[x].type == type || type == "all") ){
 				files.push(data[x]) ;
 			}
 		}) ;
@@ -705,19 +715,19 @@ function filter(){
 	files.map(x => {
 		//alert(i) ;
 		var color = "grey" ;
-		if(x.type == "serie"){
+		if(x.type == "exercices"){
 			color = "#f2ec82" ;
 		}
-		else if(x.type == "devoir"){
+		else if(x.type == "test"){
 			color = "#f7b688" ;	
 		}
-		else if(x.type == "cours"){
+		else if(x.type == "course"){
 			color = "#90ff8e" ;	
 		}
-		else if(x.type == "correction-serie"){
+		else if(x.type == "exercices-correction"){
 			color = "#f79283" ;	
 		}
-		else if(x.type == "correction-devoir"){
+		else if(x.type == "test-correction"){
 			color = "#f79283" ;	
 		}
 		console.log("file" + x.name) ;
@@ -763,7 +773,7 @@ function filter(){
 			renderOtherProfile(e , name) ;
 		});
 		document.getElementById(id).addEventListener('click' , function(e){
-			if(e.target.localName != 'a'){openFile(e , x.path) ;}
+			if(e.target.localName != 'a'){openFile(e ,x , x.path) ;}
 			console.log(e.target.localName) ;
 		});
 
@@ -787,4 +797,37 @@ document.addEventListener('keypress' , (e) => {
 
 function refresh(){
 	location.reload();
+}
+
+function displayReport(){
+	//report alert class
+	document.querySelector(".report-alert").style.display = "block" ;
+}
+
+function cancelReport(){
+	document.querySelector(".report-alert").style.display = "none" ;
+}
+
+function reportFile(file , user , reason , path , details){
+	//alert(file + user + reason + path ) ;
+	// upload to fire base 
+	var reportRef = database.ref('admin/reports') ;
+	var reportData = {
+		file : file ,
+		user : user ,
+		reason : reason ,
+		details :details ,
+		path : path ,
+		waiting : 1
+	} ;
+
+	reportRef.push(reportData) ;
+}
+
+function resetFilter(){
+	document.querySelector('#unis').value = "all" ;
+	document.querySelector('#schools').value = "all" ;
+	document.querySelector('#subject').value  = "all" ;
+	document.querySelector('#docType').value  = "all" ;
+	filter() ;
 }
