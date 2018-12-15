@@ -435,6 +435,8 @@ function uploadFile(e){
 	var uploader = document.querySelector("#uploader") ;
 	var subject = document.querySelector("#other-subject").value ; 
 	var type = document.querySelector("#file-types").value ;
+	var track = document.querySelector("#track").value ;
+	var level = document.querySelector("#level").value ;
 	console.log(subject + " " + type) ;
 	var storageRef = firebase.storage().ref(subject + "/" + file.name) ;
 	var task = storageRef.put(file) ;
@@ -481,6 +483,8 @@ function uploadFile(e){
 			uni : uni ,
 			school : school ,
 			subject : subject ,
+			track : track ,
+			level : level ,
 			date : date ,
 			views : 0 
 		}) ;
@@ -493,6 +497,8 @@ function uploadFile(e){
 			uni : uni ,
 			school : school ,
 			subject : subject ,
+			track : track ,
+			level : level ,
 			date : date ,
 			views : 0
 		}) ;
@@ -506,6 +512,8 @@ function uploadFile(e){
 			uni : uni ,
 			school : school ,
 			subject : subject ,
+			track : track ,
+			level : level ,
 			date : date ,
 			views : 0
 		}) ;
@@ -681,6 +689,8 @@ function filter(){
 	var school = document.querySelector('#schools').value  ;
 	var subject = document.querySelector('#subject').value  ;
 	var type = document.querySelector('#docType').value  ;
+	var level = document.querySelector("#level-filter").value;
+	var track = document.querySelector("#track-filter").value ;
 	//alert(uni + school + subject + type ) ;
 	var files = [] ;
 	var ref = database.ref('files') ;
@@ -694,7 +704,7 @@ function filter(){
 		data = data.val() ;
 		var keys = Object.keys(data) ;
 		keys.map(x => {
-			if((data[x].uni == uni || uni == "all") && (data[x].school == school || school == "all") && (data[x].subject == subject || subject == "all") && (data[x].type == type || type == "all") ){
+			if((data[x].level == level || level == "all") &&  (data[x].track == track || track == "all") && (data[x].uni == uni || uni == "all") && (data[x].school == school || school == "all") && (data[x].subject == subject || subject == "all") && (data[x].type == type || type == "all") ){
 				files.push(data[x]) ;
 			}
 		}) ;
@@ -829,5 +839,7 @@ function resetFilter(){
 	document.querySelector('#schools').value = "all" ;
 	document.querySelector('#subject').value  = "all" ;
 	document.querySelector('#docType').value  = "all" ;
+	document.querySelector("#track-filter").value = "all" ;
+	document.querySelector("#level-filter").value = "all" ;
 	filter() ;
 }
