@@ -1,6 +1,6 @@
 document.addEventListener("keydown" , (e) => {
 	//console.log(e.which) ;
-	//if(e.which === 123){e.preventDefault();}
+	if(e.which === 123){e.preventDefault();}
 });
 
 console.log("hey") ;
