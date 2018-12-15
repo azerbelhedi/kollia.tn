@@ -1,6 +1,6 @@
 document.addEventListener("keydown" , (e) => {
 	//console.log(e.which) ;
-	if(e.which === 123){e.preventDefault();}
+	//if(e.which === 123){e.preventDefault();}
 });
 
 console.log("hey") ;
@@ -682,7 +682,7 @@ function renderOtherProfile(e , name){
 function filter(){
 	//alert("filter") ;
 	document.querySelector(".top-docs").outerHTML = '<div class = "row top-docs" > ' +
-	'<h1 id = "top-docs">#TOP</h1>' +
+	'<h1 id = "top-docs"></h1>' +
 	'<hr> ' +
 	'</div>';
 	var uni = document.querySelector('#unis').value  ;
@@ -841,5 +841,43 @@ function resetFilter(){
 	document.querySelector('#docType').value  = "all" ;
 	document.querySelector("#track-filter").value = "all" ;
 	document.querySelector("#level-filter").value = "all" ;
+	filter() ;
+}
+
+
+function courseFilter(){
+	//resetFilter();
+	document.querySelector('#docType').value  = "course" ;
+	filter() ;
+}
+
+function testFilter(){
+	//resetFilter();
+	document.querySelector('#docType').value  = "test" ;
+	filter() ;
+}
+
+function exercicesFilter(){
+	//resetFilter();
+	document.querySelector('#docType').value  = "exercices" ;
+	filter() ;
+}
+
+function testCorrectionFilter(){
+	//resetFilter();
+	document.querySelector('#docType').value  = "test-correction" ;
+	filter() ;
+}
+
+function exercicesCorrectionFilter(){
+	//resetFilter();
+	document.querySelector('#docType').value  = "exercices-correction" ;
+	filter() ;
+}
+
+
+function allFilter(){
+	//resetFilter();
+	document.querySelector('#docType').value  = "all" ;
 	filter() ;
 }

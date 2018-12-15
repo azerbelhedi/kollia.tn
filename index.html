@@ -10,7 +10,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 	<link rel="stylesheet" type="text/css" href="bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="icon" href="http://pluspng.com/img-png/education-png-education-png-image-23452-520.png">
+	<link rel="icon" href="kollia2.png">
 </head>
 <body onload = "loadData()">
 	<div class = "popup">+9</div>
@@ -118,8 +118,28 @@
 					</div>
 				</div>
 				-->
+				<div id = "colors-helper">
+					<div class = "color-box green-box" onclick = "courseFilter()">
+						<h3>Course</h3>
+					</div>
+					<div class = "color-box yellow-box" onclick="exercicesFilter()">
+						<h3>Exercices</h3>
+					</div>
+					<div class = "color-box orange-box" onclick="testFilter()">
+						<h3>Test</h3>
+					</div>
+					<div class = "color-box red-box" onclick="testCorrectionFilter()">
+						<h3>Test-correction</h3>
+					</div>
+					<div class = "color-box red-box" onclick=" exercicesCorrectionFilter()">
+						<h3>Exercices-correction</h3>
+					</div>
+					<div class = "color-box all-box" onclick="allFilter()">
+						<h3>All</h3>
+					</div>
+				</div>
 				<div class = "row top-docs" >
-					<h1 id = "top-docs">#TOP</h1>
+					 <h1 id = "top-docs"></h1>
 				</div>
 				<h3 id = "no-results">sorry no results found</h3>
 				<!--

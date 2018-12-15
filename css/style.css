@@ -60,7 +60,7 @@
 	box-shadow: 1px 1px 7px black;
 	 /*margin-left :5px; */
 	margin-right: 10px ;
-	margin-top :2px; 
+	margin-top :0px; 
 	background-color: #364e68;
 	position:fixed;
 	z-index: 3;
@@ -118,7 +118,7 @@
 
 .categories{
 	height: 70%;
-	margin-top :10px;
+	margin-top :0px;
 	margin-bottom: 20px ;
 } /* h2*/
 
@@ -190,6 +190,7 @@
 	box-shadow: 1px 0px 7px black;
 	opacity:1;
 	padding: 0 ;
+	overflow: hidden;
 }
 
 .doc2:hover{
@@ -639,8 +640,8 @@ body{
 #report-file{
 	position: fixed;
 	bottom :10px;
-	left :10px;
-	background-color :#98ccd3;
+	right :10px;
+	background-color :#e28b28;
 	height :40px;
 	width :120px;
 	z-index :6;
@@ -710,7 +711,7 @@ body{
 
 #silogo{
 	height :50px;
-	width: 200px ;
+	width: 180px ;
 }
 
 #loading-logo{
@@ -719,4 +720,62 @@ body{
 	margin-left :auto;
 	margin-right :auto;
 }
+
+#colors-helper{
+	height :30px; 
+	width: 100% ;
+	/*background-color: red ;	*/
+	display: flex;
+}
+
+.color-box{
+	flex :1;
+	background-color: green ;
+	margin-left :3px;
+	margin-right :3px;
+	text-align: center;
+	border-radius: 0px ;
+	box-shadow: 1px 1px 5px black ;
+}
+
+.color-box h3{
+	text-shadow: 1px 1px 3px rgb(39, 38, 38);
+	font-family: 'Bree Serif', serif;
+	font-weight: bold ;
+	margin: 2px ;
+}
+
+.color-box:hover{
+	cursor: pointer;
+	box-shadow: 1px 1px 10px black ;
+
+}
+
+.red-box{
+	flex: 2 ;
+	background-color: #f79283;
+}
+
+.green-box{
+	background-color: #90ff8e ;
+}
+
+.orange-box{
+	background-color: #f7b688 ;
+}
+
+.yellow-box{
+	background-color: #f2ec82 ;
+}
+
+.all-box{
+	background:
+        linear-gradient(#ec7765, transparent),
+        linear-gradient(to top left, #7ff87d, transparent),
+		linear-gradient(to top right, #c48d66, transparent),
+		linear-gradient(to top right, #f1eb6e, transparent);
+    background-blend-mode: screen;
+}
+
+
 /*https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fd2v9y0dukr6mq2.cloudfront.net%2Fvideo%2Fthumbnail%2FJrbItQz%2Fglowing-futuristic-network-shape-loopable-background-4k-4096x2304_nvzq1ms0g__F0000.png&f=1 */
