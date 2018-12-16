@@ -106,92 +106,120 @@ function createAccount(e){
 	let school = document.getElementById('school2').value ;
 	let pass = document.getElementById("pass1").value ;
 	let confirmPass = document.getElementById("pass2").value ;
-	let data = {
+	//if(nameExist(name)){alert("the name is already token") ; return false ;}
+	//
+	var res ;
+	var usersListRef = database.ref('usersList') ;
+	const gotUsersList = (data) => {
+		data = data.val() ;
+		var keys = Object.keys(data) ;
+		var userNames = [] ;
+		keys.map(x => {userNames.push(data[x].name) ; }) ;
+		//console.log(userNames) ;
+		res = userNames.findIndex(function(element){
+			return element == name ;
+		});
+		//console.log(res) ;
+		if(res != -1){
+			alert("the name is already token") ;
+			return false ;}
+		else{
+			let data = {
 
-		email : email , 
-		name : name ,
-		phone  : phone ,
-		uni  : uni ,
-		school : school , 
-		pass : pass ,
-		confirmPass : confirmPass
-	}
-	document.getElementById("email2").value = "";
-	document.getElementById("name").value = "";
-	document.getElementById("phone").value = "";
-	document.getElementById("uni").value = "";
-	document.getElementById('school2').value = "";
-	document.getElementById("pass1").value = "";
-	document.getElementById("pass2").value = "";
-	console.log(data);
-	// other data
-	document.getElementById("login-form").reset();	
-	// firebase create-account
-	if(pass != confirmPass){alert("invalid password !") ;}
-	else{
-		firebase.auth().createUserWithEmailAndPassword(email , pass).then(function(data){
-			//alert("great !" + user);
-			console.log(data.user) ;
-			console.log("logggg : + " + data.user.uid) ;
-			var ref = database.ref('usersList') ;
-			var myData = {name : name } ;
-			ref.push(myData) ;
-
-			// new create account method :
-			//var ref = database.ref('data') ;
-			///ref.push(data) ;
-			//
-			
-			ref = database.ref('users/' + data.user.uid + '/notification') ;
-			ref.push({notification : 0}) ;
-
-			ref = database.ref('users/' + data.user.uid + '/following') ;
-			ref.push({following : ["azerbelhedi"]}) ;
-
-			ref = database.ref('users/' + data.user.uid + '/followers') ;
-			ref.push({followers : ["azerbelhedi"]}) ;
-			
-			ref = database.ref('users/' + data.user.uid + '/files') ;
-			ref.push({
-				name : "name" ,
-				path : 'path' ,
-				userName :  'userName' ,
-				type : 'type' ,
-				uni : 'uni' ,
-				school : 'school' ,
-				subject : 'subject' ,
-				date : 'date' ,
-				views : 0 ,
-				userUid  : data.user.uid 
-			}) ;
-			// phone uni school job
-			ref = database.ref('users/' + data.user.uid + '/name') ;
-			ref.push({name : name}) ;
-
-			ref = database.ref('users/' + data.user.uid + '/phone') ;
-			ref.push({phone : phone}) ;
-			
-			ref = database.ref('users/' + data.user.uid + '/uni') ;
-			ref.push({uni : uni}) ;
-
-			ref = database.ref('users/' + data.user.uid + '/school') ;
-			ref.push({school : school}) ;
-
-			var job = document.querySelector("#job").value ;
-			ref = database.ref('users/' + data.user.uid + '/job') ;
-			ref.push({job : job}) ;
+				email : email , 
+				name : name ,
+				phone  : phone ,
+				uni  : uni ,
+				school : school , 
+				pass : pass ,
+				confirmPass : confirmPass
+			}
+			document.getElementById("email2").value = "";
+			document.getElementById("name").value = "";
+			document.getElementById("phone").value = "";
+			document.getElementById("uni").value = "";
+			document.getElementById('school2').value = "";
+			document.getElementById("pass1").value = "";
+			document.getElementById("pass2").value = "";
+			console.log(data);
+			// other data
+			document.getElementById("login-form").reset();	
+			// firebase create-account
+			if(pass != confirmPass){alert("invalid password !") ;}
+			else{
+				firebase.auth().createUserWithEmailAndPassword(email , pass).then(function(data){
+					//alert("great !" + user);
+					console.log(data.user) ;
+					console.log("logggg : + " + data.user.uid) ;
+					var ref = database.ref('usersList') ;
+					var myData = {name : name } ;
+					ref.push(myData) ;
 		
-			ref = database.ref('users/' + data.user.uid + '/img') ;
-			ref.push({img : "src"}) ;
-
-		}).catch(function(error){
-			alert("error while signing up ! : " + error.message) ;
-		});	
+					// new create account method :
+					//var ref = database.ref('data') ;
+					///ref.push(data) ;
+					//
+					
+					ref = database.ref('users/' + data.user.uid + '/notification') ;
+					ref.push({notification : 0}) ;
+		
+					ref = database.ref('users/' + data.user.uid + '/following') ;
+					ref.push({following : ["azerbelhedi"]}) ;
+		
+					ref = database.ref('users/' + data.user.uid + '/followers') ;
+					ref.push({followers : ["azerbelhedi"]}) ;
+					
+					ref = database.ref('users/' + data.user.uid + '/files') ;
+					ref.push({
+						name : "name" ,
+						path : 'path' ,
+						userName :  'userName' ,
+						type : 'type' ,
+						uni : 'uni' ,
+						school : 'school' ,
+						subject : 'subject' ,
+						date : 'date' ,
+						views : 0 ,
+						userUid  : data.user.uid 
+					}) ;
+					// phone uni school job
+					ref = database.ref('users/' + data.user.uid + '/name') ;
+					ref.push({name : name}) ;
+		
+					ref = database.ref('users/' + data.user.uid + '/phone') ;
+					ref.push({phone : phone}) ;
+					
+					ref = database.ref('users/' + data.user.uid + '/uni') ;
+					ref.push({uni : uni}) ;
+		
+					ref = database.ref('users/' + data.user.uid + '/school') ;
+					ref.push({school : school}) ;
+		
+					var job = document.querySelector("#job").value ;
+					ref = database.ref('users/' + data.user.uid + '/job') ;
+					ref.push({job : job}) ;
+				
+					ref = database.ref('users/' + data.user.uid + '/img') ;
+					ref.push({img : "src"}) ;
+		
+				}).catch(function(error){
+					alert("error while signing up ! : " + error.message) ;
+				});	
+			}
+		
+			//alert("email : "+email + "\n pass : "+name);
+			// firebase log in 
+			//switchLog();
+		}
+		
 	}
 
-	//alert("email : "+email + "\n pass : "+name);
-	// firebase log in 
-	//switchLog();
+	const errorUsersList = (err) => {
+		console.log("err :" , err) ;
+	}
+	usersListRef.on('value' , gotUsersList , errorUsersList) ;
+	//
+	
 }
 
 

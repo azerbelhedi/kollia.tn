@@ -231,6 +231,7 @@
 	display: block ;
 	/*box-shadow: 1px 1px 5px black;*/
 	height :90px;
+	border-bottom :solid 2px #132238;
 }
 
 
@@ -817,7 +818,7 @@ body{
 }
 
 #colors-helper{
-	height :30px; 
+	height :40px; 
 	width: 100% ;
 	/*background-color: red ;	*/
 	display: flex;
@@ -831,6 +832,8 @@ body{
 	text-align: center;
 	border-radius: 0px ;
 	box-shadow: 1px 1px 5px black ;
+	border-radius: 15px ;
+	border :solid 3px #132238;
 }
 
 .color-box h3{
