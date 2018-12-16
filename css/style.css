@@ -376,12 +376,18 @@
 		height :100%;
 		width :100%;
 		opacity :1 !important; 
-		display: block ;
+		display: none ;
 	}
 	.stop img{
 		margin-top :20px;
 		height :150px;
 		width :150px;
+	}
+	.menu{
+		display: none ;
+	}
+	#colors-helper{
+		display: none;
 	}
 }
 @media only screen and (max-width: 600px){
