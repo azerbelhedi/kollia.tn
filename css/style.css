@@ -384,11 +384,100 @@
 		width :150px;
 	}
 	.menu{
+		display: block ;
+		width: 270px !important;
+		margin-top: 40px ;
+	}
+
+	.categories .category{
+		font-size: 40px ;
+	}
+
+	.categories .list{
+		font-size: 30px ;
+		height: 50px ;
+		width: 100% ;
+	}
+
+	#colors-helper{
+		display: block !important;
+		width: 610px !important ;
+		margin-top :50px !important;
+		margin-left: 110px;
+		margin-bottom: 420px ;
+	}
+	#no-results{
+		margin-left :150px;
+	}
+
+	#colors-helper div {
+		height: 70px ;
+		margin: 10px ;
+	}
+
+	#colors-helper div h3 {
+		font-size: 50px ;
+	}
+
+	.fixed-login{
 		display: none ;
 	}
-	#colors-helper{
-		display: none;
+	.logo{
+		height :40px;
+		width: 80% ;
 	}
+	#silogo{
+		height :100px !important; 
+		width: 280px !important ;	
+	}
+
+	.doc2{
+		width: 80% ;
+		height :700px !important;
+		margin-left: 100px !important;
+	}
+
+	.subject-type{
+		height :200px !important;
+	}
+
+	.subject-type h4{
+		font-size :60px !important;
+	}
+	
+	.name-and-path{
+		height :400px !important;
+	}
+	.name-and-path h2{
+		font-size: 50px !important ;
+		height: 200px !important;
+	}
+
+	.name-and-path h4{
+		font-size: 40px !important;
+	}
+
+	.footer h5 {
+		font-size: 30px !important ;
+	}
+
+	.top-docs{
+		margin-top: 50px ;
+	}
+
+	.long-search button{
+		font-size: 50px ;
+		height: 100px ;
+	}
+	#doc-iframe{
+		position: fixed;
+		top :50px !important;
+		left :10%;
+		z-index: 6;
+		height :40% !important;
+		width :80% !important;
+	}
+
 }
 @media only screen and (max-width: 600px){
 	.fixed .round-upload button{
