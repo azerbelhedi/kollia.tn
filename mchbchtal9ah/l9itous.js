@@ -603,6 +603,7 @@ function gotFiles(data){
 		i++ ;
 		//alert('day : ' +time) ;
 		var element = document.querySelector("#top-docs") ;
+		//element.outerHTML = '<div class = "row top-docs" > <h1 id = "top-docs"></h1> </div>' ;
 		element.outerHTML += ('  <div  class = "doc2 col-md-2 col-sm-2" id = "' + id + '" > ' +
 									'<div class = "subject-type" style = "background-color : '+color+'"> <center>'+
 										'<div class = "type"><h4>' + x.type + '</h4></div>' +
@@ -651,6 +652,46 @@ function errFiles(error){
 
 function openFile(e , x , path){
 	// delete iframe link 
+	// add view part
+	/*
+	var mara = 0 ;
+	var pathLink = undefined ;
+	var currentViews = undefined ;
+	var rootFilesRef = database.ref("files") ;
+	const errFilesRoot = (err) => {console.log(err) ; }
+	const gotFilesRoot = (localData) => {
+		localData = localData.val() ;
+		var keys = Object.keys(localData) ;
+		keys.map(z => {
+			if(localData[z].path == path){
+				console.log("salem" + localData[z].path) ;
+				//alert("wait") ;
+				pathLink = z ;
+				currentViews = localData[z].views ;
+				//break ;
+			}
+		}) ;
+		if(pathLink != undefined && currentViews != undefined && mara == 0){
+			mara++ ;
+			console.log("y : " , pathLink) ;
+			console.log("views : " , currentViews) ;
+			var viewSetRef = database.ref('files/' + pathLink + '/views') ;
+			currentViews++ ;
+			viewSetRef.set(1) ;
+		}
+		
+	}
+
+
+	rootFilesRef.on('value' , gotFilesRoot , errFilesRoot) ;
+*/
+	/*
+	var viewFileRef = database.ref('files/-LTHHabmRWRZ-cIpYF78/views') ;
+	viewFileRef.set(0) ;
+	*/
+	//console.log(x) ;
+	//alert("wait" ) ;
+	//
 	document.querySelector("#report-file-name").innerHTML = x.name ;
 	document.querySelector("#report-user-name").innerHTML = x.userName ;
 	document.querySelector("#more-report-details").value = "" ;

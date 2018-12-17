@@ -191,10 +191,15 @@
 	opacity:1;
 	padding: 0 ;
 	overflow: hidden;
+	-webkit-transition-property: transform; /* Safari */
+  	-webkit-transition-duration: 1s; /* Safari */
+  	transition-property: transform;
+  	transition-duration: 1s;
 }
 
 .doc2:hover{
 	box-shadow: 1px 0px 15px black;
+	transform: scale(1.04) ;
 }
 
 .doc2 .name-and-path{
