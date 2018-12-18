@@ -650,7 +650,81 @@ function errFiles(error){
 	console.log("error : " + error) ;
 }
 
+function addViews(pathID){
+	let viewRef = database.ref('views/' + pathID) ;
+	var times = 0;
+
+	viewRef.on('value' , gotView , errView) ;
+	
+	function gotView(data){
+		console.log('got view success : ' + data.val()) ;
+		if(data.val() != null){
+			//get add push
+			if(times == 0){
+				times++;
+				var finalViews ;
+				data = data.val() ;
+				//let viewKeys = Object.keys(data) ;
+				console.log(data.value) ;
+				//console.log(data[viewKeys[0]].value) ;
+				finalViews = data.value + 1 ;
+				viewRef.set({value : finalViews}) ;
+			}
+		}
+		else{
+			console.log("need to create new ref !") ;
+			if(times == 0){
+				times++ ;
+				viewRef.set({value : 1}) ;
+			}
+		}
+	}
+
+	function errView(err){
+		console.log("view error : " + error) ;
+	}
+	
+	//alert("adding") ;
+}
+
+function convertPath(path){
+	let testPath = path ;
+	while(testPath != testPath.replace('/','')){
+		testPath = testPath.replace('/','') ;
+		console.log(testPath) ;
+ 	}
+	while(testPath != testPath.replace(' ','')){
+		testPath = testPath.replace(' ','') ;
+		console.log(testPath) ;
+	}
+	while(testPath != testPath.replace('.','')){
+		testPath = testPath.replace('.','') ;
+		console.log(testPath) ;
+	}
+	while(testPath != testPath.replace('#','')){
+		testPath = testPath.replace('#','') ;
+		console.log(testPath) ;
+	}
+	while(testPath != testPath.replace('$','')){
+		testPath = testPath.replace('$','') ;
+		console.log(testPath) ;
+	}
+	while(testPath != testPath.replace('[','')){
+		testPath = testPath.replace('[','') ;
+		console.log(testPath) ;
+	}
+	while(testPath != testPath.replace(']','')){
+		testPath = testPath.replace(']','') ;
+		console.log(testPath) ;
+	}
+	return testPath ;
+	//.", "#", "$", "[", or "]"
+}
 function openFile(e , x , path){
+	let testPath = convertPath(path) ;
+	console.log(testPath) ;
+	addViews(testPath) ;
+	//alert("showing id") ;
 	// delete iframe link 
 	// add view part
 	/*
