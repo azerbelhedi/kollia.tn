@@ -58,7 +58,7 @@ function displayLog(){
 function displayUpload(){
 	displayLog();
 	renderState = "log";
-	document.getElementsByClassName("fixed-login")[0].innerHTML = "back to home";
+	document.getElementsByClassName("fixed-login")[0].innerHTML = "home";
 	deleteDisplay();
 	document.getElementsByClassName("upload-block")[0].style.display = "block" ;
 }
@@ -70,7 +70,7 @@ function switchLog(){
 		if(loginButton == "log in"){
 			displayLog();
 			renderState = "log";
-			document.getElementsByClassName("fixed-login")[0].innerHTML = "back to home";
+			document.getElementsByClassName("fixed-login")[0].innerHTML = "home";
 		}
 		else if(loginButton == "log out"){
 			logout() ;
