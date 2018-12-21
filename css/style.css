@@ -339,10 +339,16 @@
 .block input{
 	display :inline-block;
 	width :200px;
+	border :none; 
+	height :30px;
+	border-radius: 30px ;
 }
 
 .block select{
 	width :200px;
+	border :none; 
+	height :30px;
+	border-radius: 30px ;
 }
 
 #signup-button , #login-button{
@@ -878,5 +884,9 @@ body{
     background-blend-mode: screen;
 }
 
-
+.categories select{
+	color :white;
+	background-color: #1d314e ;
+	border :none;
+}
 /*https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fd2v9y0dukr6mq2.cloudfront.net%2Fvideo%2Fthumbnail%2FJrbItQz%2Fglowing-futuristic-network-shape-loopable-background-4k-4096x2304_nvzq1ms0g__F0000.png&f=1 */
