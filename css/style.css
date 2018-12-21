@@ -888,5 +888,37 @@ body{
 	color :white;
 	background-color: #1d314e ;
 	border :none;
+	font-weight: bold ;
 }
+
+.login .block input{
+	background-color: #1d314e ; 
+	color :white;
+	font-weight: bold ;
+	padding-left: 15px ;
+}
+
+.signup .block input{
+	background-color: #3d4d66 ; 
+	color :white;
+	font-weight: bold ;
+	padding-left: 15px ;
+}
+
+.signup .block select{
+	background-color: #3d4d66 ; 
+	color :white;
+	font-weight: bold ;
+	padding-left: 15px ;
+}
+
+.upload-block .block select{
+	background-color: #233147 ; 
+	color :white;
+	font-weight: bold ;
+	padding-left: 15px ;
+}
+
+
+
 /*https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fd2v9y0dukr6mq2.cloudfront.net%2Fvideo%2Fthumbnail%2FJrbItQz%2Fglowing-futuristic-network-shape-loopable-background-4k-4096x2304_nvzq1ms0g__F0000.png&f=1 */
