@@ -378,6 +378,18 @@
 	}
 }
 @media only screen and (max-width: 992px){
+	.help-bar a{
+		top: 5px !important ;
+		right: 0px !important ;
+		height: 80px !important ;
+		width :200px !important ;
+		z-index: 3;
+	}
+	
+	.help-bar a h1{
+		font-size: 45px !important ;
+	}
+	/* help over  */
 	.stop{
 		background-color: #88bec3 ;
 		color :#2e3b55;
