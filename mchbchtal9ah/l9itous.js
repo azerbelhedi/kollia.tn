@@ -1,9 +1,18 @@
 document.addEventListener("keydown" , (e) => {
 	//console.log(e.which) ;
 	//alert(e.which) ;
-	if(e.which === 123){e.preventDefault();}
+	//if(e.which === 123){e.preventDefault();}
 	if(e.which === 67){e.preventDefault();}
 });
+
+// init 
+
+document.querySelector("#other-subject").value = "select-subject" ;
+document.querySelector("#file-types").value = "select-type" ;
+document.querySelector("#track").value = "select-track" ; 
+document.querySelector("#level").value = "select-level" ;
+
+// /init
 
 
 console.log("hey") ;
@@ -236,7 +245,18 @@ document.getElementById("signup-form").addEventListener('submit',function(e){
 
 
 document.getElementById("file").addEventListener('change',function(e){
-	uploadFile(e);
+	let upSubject = document.querySelector("#other-subject").value ;
+	let upType = document.querySelector("#file-types").value ;
+	let upTrack = document.querySelector("#track").value ; 
+	let upLevel = document.querySelector("#level").value ;
+	if(upSubject == "select-subject" || upType == "select-type" || upTrack == "select-track" || upLevel == "select-level"){
+		alert("please select subject , type , track and level first !") ;
+	}
+	else{
+		//alert("will upload  !") ;
+		uploadFile(e);
+	}
+	//uploadFile(e);
 });
 
 firebase.auth().onAuthStateChanged(function(user){
@@ -1026,4 +1046,8 @@ function allFilter(){
 	//resetFilter();
 	document.querySelector('#docType').value  = "all" ;
 	filter() ;
+}
+
+function goToHelp(){
+	window.open("https://www.youtube.com/watch?v=N3OD8WssjKA" , "_blank") ;
 }

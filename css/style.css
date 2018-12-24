@@ -144,7 +144,8 @@
 
 .list{
 	width:80%;
-	height  :20px;
+	height  :23px;
+	border-radius: 20px ;
 }
 
 .long-search button{
@@ -273,7 +274,7 @@
 .fixed .round-upload button{
 	position: fixed;
 	top: 0px;
-	right: 160px;
+	right: 300px;
 	height: 50px;
 	width :200px;
 	border: none;
@@ -919,6 +920,48 @@ body{
 	padding-left: 15px ;
 }
 
+/* shake */
+
+@keyframes shake {
+	0% { transform: translate(0px, 1px) rotate(0deg); }
+	10% { transform: translate(0px, -2px) rotate(-1deg); }
+	20% { transform: translate(0px, 0px) rotate(1deg); }
+	30% { transform: translate(0px, 2px) rotate(0deg); }
+	40% { transform: translate(0px, -1px) rotate(1deg); }
+	50% { transform: translate(0px, 2px) rotate(-1deg); }
+	60% { transform: translate(0px, 1px) rotate(0deg); }
+	70% { transform: translate(0px, 1px) rotate(-1deg); }
+	80% { transform: translate(0px, -1px) rotate(1deg); }
+	90% { transform: translate(0px, 2px) rotate(0deg); }
+	100% { transform: translate(0px, -2px) rotate(-1deg); }
+}
+
+
+.help-bar button{
+	position: fixed;
+	top: 0px;
+	right: 160px;
+	height: 50px;
+	width :140px;
+	border: none;
+	background-color: #132238;
+	z-index: 3;
+	
+}
+
+.help-bar button h1{
+	animation: shake 1.5s;
+	animation-iteration-count: infinite;
+	font-family: 'Bree Serif', serif;
+	font-size: 21px;
+	color :white;
+	font-weight: bolder;
+	margin-top: 9px ;
+}
+
+.help-bar button:hover{
+	background-color : #273852;	
+}
 
 
 /*https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fd2v9y0dukr6mq2.cloudfront.net%2Fvideo%2Fthumbnail%2FJrbItQz%2Fglowing-futuristic-network-shape-loopable-background-4k-4096x2304_nvzq1ms0g__F0000.png&f=1 */

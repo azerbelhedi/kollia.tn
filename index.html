@@ -236,7 +236,9 @@
 					-->
 					<div class = "block">
 						<label>subject<span style = "color: red">*</span> </label>
-						<select id = "other-subject"></select>
+						<select id = "other-subject">
+							<option value="select-subject">select subject</option>
+						</select>
 					</div>
 					<div class = "block">
 						<label>type<span style = "color: red">*</span> </label>
@@ -246,12 +248,14 @@
 							<option value="course">course</option>
 							<option value="exercices-correction">exercices-correction</option>
 							<option value="test-correction">test-correction</option>
+							<option selected  value="select-type">select type</option>
 						</select>
 					</div>
 					<div class = block>
 						<label>track<span style = "color: red">*</span> </label>
 						<select id="track">
-							<option  selected value="prepa integree">integrated preparatory</option>
+							<option selected value="select-track">select track</option>
+							<option  value="prepa integree">integrated preparatory</option>
 							<option value="bachelor">bachelor</option>
 							<option value="master">master</option>
 						</select>
@@ -259,7 +263,8 @@
 					<div class = block>
 						<label>level<span style = "color: red">*</span> </label>
 						<select id="level">
-							<option selected value="1">1</option>
+							<option selected value="select-level">select level</option>
+							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
 						</select>
@@ -324,6 +329,9 @@
 				<button onclick = "cancelReport()">cancel</button>
 			</div>	
 		</center>
+	</div>
+	<div class = "help-bar">
+		<button id = "help-button" onclick = "goToHelp()"> <h1>Help</h1></button>
 	</div>
 </body>
 <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
