@@ -568,7 +568,7 @@ function uploadFile(e){
 			date : date ,
 			views : 0
 		}) ;
-		alert("file uploded ") ;
+		alert("file uploaded ") ;
 		location.reload() ;
 	}
 	) ;
