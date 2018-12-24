@@ -937,7 +937,7 @@ body{
 }
 
 
-.help-bar button{
+.help-bar a{
 	position: fixed;
 	top: 0px;
 	right: 160px;
@@ -949,7 +949,7 @@ body{
 	
 }
 
-.help-bar button h1{
+.help-bar a h1{
 	animation: shake 1.5s;
 	animation-iteration-count: infinite;
 	font-family: 'Bree Serif', serif;
@@ -957,10 +957,15 @@ body{
 	color :white;
 	font-weight: bolder;
 	margin-top: 9px ;
+	width: 50% ;
+	margin-left: auto ;
+	margin-right :auto;
+	text-decoration: none;
 }
 
-.help-bar button:hover{
+.help-bar a:hover{
 	background-color : #273852;	
+	text-decoration: none;
 }
 
 

@@ -1,7 +1,7 @@
 document.addEventListener("keydown" , (e) => {
 	//console.log(e.which) ;
 	//alert(e.which) ;
-	//if(e.which === 123){e.preventDefault();}
+	if(e.which === 123){e.preventDefault();}
 	if(e.which === 67){e.preventDefault();}
 });
 
@@ -1046,8 +1046,4 @@ function allFilter(){
 	//resetFilter();
 	document.querySelector('#docType').value  = "all" ;
 	filter() ;
-}
-
-function goToHelp(){
-	window.open("https://www.youtube.com/watch?v=N3OD8WssjKA" , "_blank") ;
 }
