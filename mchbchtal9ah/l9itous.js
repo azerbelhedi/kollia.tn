@@ -483,6 +483,7 @@ function uploadFile(e){
 	e.preventDefault();
 	//alert("upload");
 	var file = e.target.files[0] ;
+	// control file size !!
 	var uploader = document.querySelector("#uploader") ;
 	var subject = document.querySelector("#other-subject").value ; 
 	var type = document.querySelector("#file-types").value ;
@@ -568,8 +569,15 @@ function uploadFile(e){
 			date : date ,
 			views : 0
 		}) ;
-		alert("file uploaded ") ;
-		location.reload() ;
+		//alert("file uploaded ") ;
+		if(confirm("file uploaded successfully ! \n do you want to upload more documents ?")){
+			// upload more
+		}
+		else{
+			location.reload() ;
+		}
+
+		// confirm 
 	}
 	) ;
 }
