@@ -1065,3 +1065,11 @@ function allFilter(){
 	document.querySelector('#docType').value  = "all" ;
 	filter() ;
 }
+
+// fast tracks filter
+
+function filterTracks(){
+	let track = document.querySelector("#fastTrack").value ;
+	document.querySelector("#track-filter").value = track ;
+	filter() ;
+}

@@ -377,8 +377,24 @@
 	}
 }
 @media only screen and (max-width: 992px){
+	.fastTrack{
+		/*background-color: red ; */
+		position: fixed !important;
+		top: 140px !important ;
+		left: 50px !important ;
+	}
+	#fastTrack{
+		top: 120px !important ;
+		height: 70px !important ;
+		font-size: 30px !important;
+		width: 400px !important ;
+	}
+
+	.top{
+		height :200px !important;
+	}
 	.help-bar a{
-		top: 5px !important ;
+		top: 110px !important ;
 		right: 0px !important ;
 		height: 80px !important ;
 		width :200px !important ;
@@ -386,7 +402,7 @@
 	}
 	
 	.help-bar a h1{
-		font-size: 45px !important ;
+		font-size: 50px !important ;
 	}
 	/* help over  */
 	.stop{
@@ -410,7 +426,7 @@
 	.menu{
 		display: block ;
 		width: 270px !important;
-		margin-top: 40px ;
+		margin-top: 150px ;
 	}
 
 	.categories .category{
@@ -426,7 +442,7 @@
 	#colors-helper{
 		display: block !important;
 		width: 610px !important ;
-		margin-top :50px !important;
+		margin-top :150px !important;
 		margin-left: 110px;
 		margin-bottom: 420px ;
 	}
@@ -448,11 +464,15 @@
 	}
 	.logo{
 		height :40px;
-		width: 80% ;
+		width: 100% ;
+		padding-left :30% ;
+		z-index: 5;
 	}
 	#silogo{
-		height :100px !important; 
-		width: 280px !important ;	
+		height :130px !important; 
+		width: 400px !important ;
+		margin-left: auto ;
+		margin-right: auto ;	
 	}
 
 	.doc2{
@@ -979,5 +999,35 @@ body{
 	text-decoration: none;
 }
 
+.fastTrack{
+	display: inline;
+}
 
+.fastTrack h1{
+	padding :0;
+	margin: 0 ;
+	margin-top: 20px ;
+	color: white ;
+	font-family: 'Bree Serif', serif;
+	margin-right: 20px ;
+	font-weight: bolder ;
+	width: 100px ;
+	display: inline;
+}
+
+.fastTrack select{
+	background-color: #1d314e ;
+	border: none ;
+	display: inline;
+	position: fixed;
+	top :5px;
+	height :40px;
+	color :white;
+	margin-top: 0px ;
+	font-weight: bolder ;
+	/*width :300px; */
+	width: 250px ;
+	font-size: 20px ;
+	border-radius: 20px ;
+}
 /*https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fd2v9y0dukr6mq2.cloudfront.net%2Fvideo%2Fthumbnail%2FJrbItQz%2Fglowing-futuristic-network-shape-loopable-background-4k-4096x2304_nvzq1ms0g__F0000.png&f=1 */

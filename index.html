@@ -17,14 +17,23 @@
 	<div class = "container-fluid all">
 		<div class = "row top">
 			<div class = "col-md-2 col-sm-4 logo" onclick = "refresh()">
-				<center>
 					<!-- <h1>Kollia.tn</h1> -->
 					<img src="kollia.png" id = "silogo">
-				</center>
 			</div>
-			<div class = "col-md-6 col-sm-7 search-area">
+			<div class = " col-md-4 col-sm-6 fastTrack">
+				<h1>Track</h1>
+				<select id="fastTrack" onchange="filterTracks()">
+					<option  selected value="prepa integree">integrated preparatory</option>
+					<option value="bachelor">bachelor</option>
+					<option value="master">master</option>
+					<option value="Engineering">Engineering</option>
+				</select>
+			</div>
+			<!--
+			<div class = "col-md-2 col-sm-3 search-area">
 				<input type="text" placeholder="search documents and people">
 			</div>
+			-->
 			<div class = "col-md-3 col-sm-12 search-button">
 				<button id = "not-search-button">search</button>
 				<div class = "fixed-login" onclick="switchLog()">login </div>
