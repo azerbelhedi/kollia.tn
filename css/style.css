@@ -185,7 +185,7 @@
 
 .doc2{
 	width :180px;
-	height :215px;
+	height :235px;
 	background-color:rgb(215, 232, 233) ;
 	margin :10px;	
 	box-shadow: 1px 0px 7px black;
@@ -220,7 +220,6 @@
 .doc2 .name-and-path h2  , h4{
 	margin :0;
 	text-align: center ;
-	
 }
 
 .doc2 .doc2-img img{
@@ -457,9 +456,9 @@
 	}
 
 	.doc2{
-		width: 80% ;
-		height :700px !important;
-		margin-left: 100px !important;
+		width: 65% ;
+		height :600px !important;
+		margin-left: 150px !important;
 	}
 
 	.subject-type{
@@ -467,11 +466,11 @@
 	}
 
 	.subject-type h4{
-		font-size :60px !important;
+		font-size :50px !important;
 	}
 	
 	.name-and-path{
-		height :400px !important;
+		height :300px !important;
 	}
 	.name-and-path h2{
 		font-size: 50px !important ;
