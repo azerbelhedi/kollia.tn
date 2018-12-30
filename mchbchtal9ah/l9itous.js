@@ -1,7 +1,7 @@
 document.addEventListener("keydown" , (e) => {
 	//console.log(e.which) ;
 	//alert(e.which) ;
-	if(e.which === 123){e.preventDefault();}
+	//if(e.which === 123){e.preventDefault();}
 	if(e.which === 67){e.preventDefault();}
 });
 
@@ -639,7 +639,7 @@ function gotFiles(data){
 		//alert('day : ' +time) ;
 		var element = document.querySelector("#top-docs") ;
 		//element.outerHTML = '<div class = "row top-docs" > <h1 id = "top-docs"></h1> </div>' ;
-		element.outerHTML += ('  <div  class = "doc2 col-md-2 col-sm-2" id = "' + id + '" > ' +
+		element.outerHTML += ('  <div  class = "doc3 col-md-2 col-sm-2" id = "' + id + '" > ' +
 									'<div class = "subject-type" style = "background-color : '+color+'"> <center>'+
 										'<div class = "type"><h4>' + x.type + '</h4></div>' +
 										'<div class = "subject"><h4>' + x.subject + '</h4></div> '+
@@ -936,7 +936,7 @@ function filter(){
 		else if(x.level == 3){yearex = "rd " ;}
 		//alert('day : ' +time) ;
 		var element = document.querySelector("#top-docs") ;
-		element.outerHTML +=  ('  <div  class = "doc2 col-md-2 col-sm-2" id = "' + id + '" > ' +
+		element.outerHTML +=  ('  <div  class = "doc3 col-md-2 col-sm-2" id = "' + id + '" > ' +
 		'<div class = "subject-type" style = "background-color : '+color+'"> <center>'+
 		'<div class = "type"><h4>' + x.type + '</h4></div>' +
 		'<div class = "subject"><h4>' + x.subject + '</h4></div> '+
