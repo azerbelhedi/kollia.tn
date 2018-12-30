@@ -976,8 +976,8 @@ body{
 	margin-left :3px;
 	margin-right :3px;
 	text-align: center;
-	box-shadow: 1px 1px 5px black ;
-	border-radius: 10px ;
+	box-shadow: 1px 1px 5px rgb(59, 58, 58) ;
+	border-radius: 0px ;
 }
 
 .color-box h3{
@@ -989,7 +989,7 @@ body{
 
 .color-box:hover{
 	cursor: pointer;
-	box-shadow: 1px 1px 10px black ;
+	box-shadow: 1px 1px 7px rgb(39, 38, 38) ;
 
 }
 
