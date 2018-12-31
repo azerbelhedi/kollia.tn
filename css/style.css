@@ -335,9 +335,9 @@
 .fixed .round-upload button{
 	position: fixed;
 	top: 0px;
-	right: 300px;
+	right: 200px;
 	height: 50px;
-	width :200px;
+	width :150px;
 	border: none;
 	background-color: white;
 	color :#132238;
@@ -661,7 +661,7 @@
 	right :0px;
 	z-index: 4;
 	height: 50px;
-	width :160px;
+	width :120px;
 	border: none;
 	background-color: white;
 	color :#132238;
@@ -981,7 +981,7 @@ body{
 }
 
 .color-box h3{
-	text-shadow: 1px 1px 3px rgb(39, 38, 38);
+	text-shadow: 1px 1px 1px rgb(39, 38, 38);
 	font-family: 'Bree Serif', serif;
 	font-weight: bold ;
 	margin: 2px ;
@@ -995,27 +995,26 @@ body{
 
 .red-box{
 	flex: 2 ;
-	background-color: #f79283;
+	background-color: #9DC8C8;
 }
 
 .green-box{
-	background-color: #90ff8e ;
+	background-color: #58C9B9 ;
 }
 
 .orange-box{
-	background-color: #f7b688 ;
+	background-color: #519D9E ;
 }
 
 .yellow-box{
-	background-color: #f2ec82 ;
+	background-color: #D1B6E1 ;
 }
 
 .all-box{
 	background:
-        linear-gradient(#ec7765, transparent),
-        linear-gradient(to top left, #7ff87d, transparent),
-		linear-gradient(to top right, #c48d66, transparent),
-		linear-gradient(to top right, #f1eb6e, transparent);
+        linear-gradient(#D1B6E1, transparent),
+		linear-gradient(to top right, rgb(61, 148, 150), transparent),
+		linear-gradient(to top right, rgb(176, 141, 196), transparent);
     background-blend-mode: screen;
 }
 
@@ -1074,9 +1073,9 @@ body{
 .help-bar a{
 	position: fixed;
 	top: 0px;
-	right: 160px;
+	right: 110px;
 	height: 50px;
-	width :140px;
+	width :100px;	
 	border: none;
 	background-color: white;
 	z-index: 3;

@@ -5,6 +5,7 @@ document.addEventListener("keydown" , (e) => {
 	if(e.which === 67){e.preventDefault();}
 });
 
+
 // init 
 
 document.querySelector("#other-subject").value = "select-subject" ;
@@ -609,19 +610,19 @@ function gotFiles(data){
 		var d = new Date();
 		var color = "grey" ;
 		if(x.type == "exercices"){
-			color = "#f2ec82" ;
+			color = "#D1B6E1" ;
 		}
 		else if(x.type == "test"){
-			color = "#f7b688" ;	
+			color = "#519D9E" ;	
 		}
 		else if(x.type == "course"){
-			color = "#90ff8e" ;	
+			color = "#58C9B9" ;	
 		}
 		else if(x.type == "exercices-correction"){
-			color = "#f79283" ;	
+			color = "#9DC8C8" ;	
 		}
 		else if(x.type == "test-correction"){
-			color = "#f79283" ;	
+			color = "#9DC8C8" ;	
 		}
 		var time = date_diff_indays(x.date , d) ;
 		var id = x.name+i ;
@@ -905,19 +906,19 @@ function filter(){
 		//alert(i) ;
 		var color = "grey" ;
 		if(x.type == "exercices"){
-			color = "#f2ec82" ;
+			color = "#D1B6E1" ;
 		}
 		else if(x.type == "test"){
-			color = "#f7b688" ;	
+			color = "#519D9E" ;	
 		}
 		else if(x.type == "course"){
-			color = "#90ff8e" ;	
+			color = "#58C9B9" ;	
 		}
 		else if(x.type == "exercices-correction"){
-			color = "#f79283" ;	
+			color = "#9DC8C8" ;	
 		}
 		else if(x.type == "test-correction"){
-			color = "#f79283" ;	
+			color = "#9DC8C8" ;	
 		}
 		console.log("file" + x.name) ;
 		var d = new Date();
@@ -1073,3 +1074,6 @@ function filterTracks(){
 	document.querySelector("#track-filter").value = track ;
 	filter() ;
 }
+
+
+filter() ;
