@@ -860,6 +860,9 @@ function renderOtherProfile(e , name){
 
 
 function filter(){
+	if(screen.width < 600 && filterResponsiveState == "shown"){
+		responsiveFilterButton() ;
+	}
 	//alert("filter") ;
 	document.querySelector(".top-docs").outerHTML = '<div class = "row top-docs" > ' +
 	'<h1 id = "top-docs"></h1>' +

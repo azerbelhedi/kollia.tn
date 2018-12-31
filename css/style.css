@@ -158,13 +158,13 @@
 	font-weight: bolder;
 	font-size: 25px;
 	/*box-shadow: 1px 1px 10px black;*/
-	background-color :#b8c5da;
+	background-color :#a1c1f3;
 	margin-top:10px;
 	font-family: 'Bree Serif', serif;
 }
 
 .long-search button:hover{
-	background-color :#a0afc5;
+	background-color :#84a5db;
 	box-shadow: 1px 1px 5px black;
 }
 
@@ -441,12 +441,18 @@
 	}
 }
 @media only screen and (max-width: 992px){
+	.responsive-filter-button{
+		display: inline !important; 
+	}
+	.menu{
+		display: none;
+	}
 	.display{
 		display: block !important;
 		/*background-color: black ;*/
 		width :100% !important;
-		top :250px !important;
-		left :380px !important;
+		top :180px !important;
+		left :80px !important;
 	}
 	.fastTrack{
 		/*background-color: red ; */
@@ -459,6 +465,13 @@
 		height: 70px !important ;
 		font-size: 30px !important;
 		width: 400px !important ;
+		left :200px;
+	}
+	.fastTrack h1{
+		font-size: 50px !important ;
+		position: fixed !important;
+		top: 90px !important;
+		left :10px !important;
 	}
 
 	.top{
@@ -495,10 +508,11 @@
 		width :150px;
 	}
 	.menu{
-		display: block ;
-		width: 350px !important;
+		width: 100% !important;
 		margin-top: 150px ;
 		box-shadow: 1px 1px 5px black ;
+		padding-left :20%;
+		padding-right :20%;
 	}
 
 	.categories .category{
@@ -507,8 +521,9 @@
 
 	.categories .list{
 		font-size: 30px ;
-		height: 50px ;
+		height: 80px ;
 		width: 100% ;
+		margin-bottom: 20px ;
 	}
 
 	#colors-helper{
@@ -1024,7 +1039,7 @@ body{
 
 .categories select{
 	color :rgb(58, 126, 153);
-	background-color: #b8c5da ;
+	background-color: #a1c1f3 ;
 	border :none;
 	font-weight: bold ;
 }
@@ -1127,7 +1142,7 @@ body{
 }
 
 .fastTrack select{
-	background-color: #c6d1e4 ;
+	background-color: #a1c1f3 ;
 	border: none ;
 	display: inline;
 	position: fixed;
@@ -1141,4 +1156,27 @@ body{
 	font-size: 20px ;
 	border-radius: 2px ;
 }
+
+.responsive-filter-button{
+	position: fixed;
+	bottom: 0px ;
+	left :0px;
+	height :130px;
+	width :100%;
+	background-color: white ;
+	box-shadow: -2px -2px 3px black ;
+	display: none ;
+}
+
+.responsive-filter-button h1{
+	width: 58% ;
+	/*background-color: red ;*/
+	font-weight :bold;
+	font-size: 70px ;
+	margin-left :auto;
+	margin-right :auto;
+	color: #3765af ;
+	text-shadow: 5px 5px 60px rgb(93, 149, 221) ;
+}
+
 /*https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fd2v9y0dukr6mq2.cloudfront.net%2Fvideo%2Fthumbnail%2FJrbItQz%2Fglowing-futuristic-network-shape-loopable-background-4k-4096x2304_nvzq1ms0g__F0000.png&f=1 */
