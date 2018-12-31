@@ -50,7 +50,7 @@
 	height :530px;
 	position: absolute;
 	width: 100%;
-	top :50px;
+	top :51px;
 }
 
 .menu{
@@ -63,7 +63,7 @@
 	margin-top :0px; 
 	background-color: #ebf0f6;
 	position:fixed;
-	z-index: 2;
+	z-index: 3;
 }
 
 .logo h1{
@@ -225,6 +225,7 @@
 
 .doc3 .subject-type{
 	width :20%;
+	overflow: hidden;
 }
 
 .doc3 .name-and-path{
@@ -238,6 +239,7 @@
 	font-size: 14px ;
 	flex :4;
 	font-weight: bold ;
+	overflow: hidden;
 }
 
 .doc3 .name-and-path h4{
@@ -511,7 +513,7 @@
 
 	#colors-helper{
 		display: block !important;
-		width: 100% !important ;
+		width: 90% !important ;
 		margin-top :0px !important;
 		margin-left: 0px;
 		margin-bottom: 350px ;
@@ -559,6 +561,7 @@
 		margin-top :160px !important;
 		margin-bottom: 10px !important;
 		height :400px !important;
+		width : 90% !important;
 	}
 
 	.doc3 .subject-type{
