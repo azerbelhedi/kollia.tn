@@ -32,6 +32,16 @@ let dateObject = {
     mSeconds : mSeconds
 };
 
+
+let browserData = {
+    appCodeName : navigator.appCodeName ,
+    appName : navigator.appName ,
+    product : navigator.product ,
+    userAgent : navigator.userAgent ,
+    platform : navigator.platform
+} ;
+//console.log(browserData) ;
+
 let device ;
 let type ;
 if(screen.width > 900){
@@ -46,11 +56,11 @@ device = {type : type , width : screen.width} ;
 console.log("test date object");
 console.log(dateObject) ;
 let timerRef = database.ref("timer/" + timerId);
-timerRef.set({duration : 0 , date : dateObject , device , device}) ;
+timerRef.set({duration : 0 , date : dateObject , device , device , browserData : browserData}) ;
 
 const addTime = () => {
     time += 1 ;
-    timerRef.set({duration : time , date : dateObject , device : device}) ;
+    timerRef.set({duration : time , date : dateObject , device : device , browserData : browserData}) ;
 }
 
 setInterval(addTime , 60000) ;
