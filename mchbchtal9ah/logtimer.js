@@ -13,13 +13,44 @@ console.log("logtimer ready !") ;
 let timerId = makeid(15) ; 
 //alert(timerId);
 let time = 0 ;
+let date = new Date() ;
+let year = date.getFullYear() ;
+let month = date.getMonth() +1 ;
+let day = date.getDate() ;
+let hours = date.getHours() ;
+let minutes = date.getMinutes() ;
+let seconds = date.getSeconds() ;
+let mSeconds = date.getMilliseconds() ;
+let dateObject = {
+    date :date ,
+    year : year ,
+    month : month ,
+    day : day ,
+    hours : hours ,
+    minutes : minutes ,
+    seconds : seconds ,
+    mSeconds : mSeconds
+};
 
-let timerRef = database.ref("timer/" + timerId);
-timerRef.set({duration : 0}) ;
-
-const addTime = () => {
-    time += 5 ;
-    timerRef.set({duration : time}) ;
+let device ;
+let type ;
+if(screen.width > 900){
+    type = "computer" ;
+}
+else{
+    type = "phone" ;
 }
 
-setInterval(addTime , 5000) ;
+device = {type : type , width : screen.width} ;
+
+console.log("test date object");
+console.log(dateObject) ;
+let timerRef = database.ref("timer/" + timerId);
+timerRef.set({duration : 0 , date : dateObject , device , device}) ;
+
+const addTime = () => {
+    time += 1 ;
+    timerRef.set({duration : time , date : dateObject , device : device}) ;
+}
+
+setInterval(addTime , 60000) ;
