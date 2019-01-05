@@ -354,7 +354,7 @@
 }
 
 .log-block h1{
-	color :#ebf0f6;
+	color :#0b0b0c;
 	font-weight: bolder ;
 }
 
@@ -368,11 +368,11 @@
 }
 
 .login{
-	background-color: #364e68 ;
+	background-color: white ;
 }
 
 .signup{
-	background-color: #243547 ;
+	background-color: white ;
 }
 
 .signup h1{
@@ -396,11 +396,20 @@
 	font-size: 25px;
 	margin-top: 5px;
 	margin-bottom: 5px;
-	color :white;
+	color :black;
 	font-family: 'Bree Serif', serif;
 }
 
 .block input{
+	display :inline-block;
+	width :200px;
+	border :none; 
+	height :30px;
+	border-radius: 30px ;
+	background-color: #a1c1f3 !important;
+}
+
+.block #fileLabel{
 	display :inline-block;
 	width :200px;
 	border :none; 
@@ -413,12 +422,13 @@
 	border :none; 
 	height :30px;
 	border-radius: 30px ;
+	background-color: #a1c1f3 !important;
 }
 
 #signup-button , #login-button{
 	margin-top :20px;
 	margin-bottom: 15px ;
-	background-color: #132238 ;
+	background-color: #a1c1f3 ;
 	height :30px;
 	width :120px;
 	border :none;
@@ -427,7 +437,7 @@
 	font-weight: bold ;
 } 
 #signup-button:hover , #login-button:hover{
-	background-color: #2d405c
+	background-color: #81a1d6 ;
 }
 
 #login-title{
@@ -658,7 +668,7 @@
 	min-height: 500px ;
 	width :60%;
 	margin-top: 62px;
-	background-color: #364e68;
+	background-color: white;
 	opacity: 1;
 	box-shadow: 3px 3px 5px black;
 }
@@ -666,10 +676,10 @@
 .upload-block h1{
 	padding-top :30px;
 	margin-bottom: 20px ;
-	color :#ebf0f6;
+	color :black;
 	font-weight: bolder ;
 	font-family: 'Bree Serif', serif;
-	text-shadow: 1px 1px 5px black ;
+	text-shadow: 1px 1px 2px rgb(39, 37, 37) ;
 }
 
 /* class = log*/
@@ -1146,8 +1156,8 @@ body{
 	border: none ;
 	display: inline;
 	position: fixed;
-	top :5px;
-	height :40px;
+	top :10px;
+	height :30px;
 	color :#132238;
 	margin-top: 0px ;
 	font-weight: bolder ;
@@ -1179,4 +1189,107 @@ body{
 	text-shadow: 5px 5px 60px rgb(93, 149, 221) ;
 }
 
-/*https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fd2v9y0dukr6mq2.cloudfront.net%2Fvideo%2Fthumbnail%2FJrbItQz%2Fglowing-futuristic-network-shape-loopable-background-4k-4096x2304_nvzq1ms0g__F0000.png&f=1 */
+#file{
+	display: none ;
+}
+
+#fileLabel{
+	background-color: #a1c1f3 ;
+	padding-left :45px;
+	font-size: 20px ;
+	border-radius: 0px !important;
+	box-shadow: 2px 2px 5px rgb(14, 13, 13) ;
+}
+
+#fileLabel:hover{
+	cursor: pointer;
+}
+
+#stage2 , #stage3 , #stage4{
+	display: none ;
+}
+
+#finalFileName{
+	padding-left :20px;
+}
+
+
+#stage4Background{
+	background-color: black ;
+	opacity: 0.8 ;
+	width :100%;
+	height: 100% ;
+	position: fixed;
+	top :0;
+	left :0;
+	z-index: 11;
+	display: none ;
+}
+
+#stage4{
+	display: none ;
+	background-color: white ;
+	position: fixed ;
+	z-index: 12;
+	height :500px;
+	width :1000px;
+	top :60px;
+	left :200px;
+}
+
+#addArea{
+	height :350px;
+	background-color: rgb(199, 214, 214) ;
+	margin:10px;
+	padding-top :50px;
+}
+
+#uploadBoard progress {
+	width :800px; 
+	height: 20px ;
+	display: inline;
+}
+
+#uploadBoard > div{
+	display: inline-block ;
+	width :50px;
+} 
+
+
+#upload-gif{
+	border: 5px solid rgb(111, 193, 214);
+	border-radius: 50%;
+	border-top: 5px solid #1b345a;
+	width: 20px;
+	height: 20px;
+	-webkit-animation: spin2 1s linear infinite; /* Safari */
+	animation: spin2 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin2 {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+  
+  @keyframes spin2 {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+.std-button{
+	width :160px;
+	height :35px;
+	border :none;
+	color: #132238;	
+	font-weight: bolder;
+	font-size: 25px;
+	/*box-shadow: 1px 1px 10px black;*/
+	background-color :#a1c1f3;
+	margin-top:10px;
+	font-family: 'Bree Serif', serif;
+}
+
+#doneUpload{
+	display: none ;
+}

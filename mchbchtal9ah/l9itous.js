@@ -1,11 +1,11 @@
 document.addEventListener("keydown" , (e) => {
 	//console.log(e.which) ;
 	//alert(e.which) ;
-	if(e.which === 123){e.preventDefault();}
+	//if(e.which === 123){e.preventDefault();}
 	if(e.which === 67){e.preventDefault();}
 });
 
-
+let fileEvent ;
 // init 
 
 document.querySelector("#other-subject").value = "select-subject" ;
@@ -246,19 +246,27 @@ document.getElementById("signup-form").addEventListener('submit',function(e){
 
 
 document.getElementById("file").addEventListener('change',function(e){
-	let upSubject = document.querySelector("#other-subject").value ;
+	fileEvent = e ;
+ 	let upSubject = document.querySelector("#other-subject").value ;
 	let upType = document.querySelector("#file-types").value ;
 	let upTrack = document.querySelector("#track").value ; 
 	let upLevel = document.querySelector("#level").value ;
-	if(upSubject == "select-subject" || upType == "select-type" || upTrack == "select-track" || upLevel == "select-level"){
-		alert("please select subject , type , track and level first !") ;
+	document.querySelector("#stage2").style.display = "inline" ;
+	document.querySelector("#stage1").style.display = "none" ;
+	let fileName = e.target.files[0].name ;
+	// make 50
+	if(fileName.length > 50) {
+		fileName = fileName.substring(0 , 50) ;
 	}
-	else{
-		//alert("will upload  !") ;
-		uploadFile(e);
-	}
-	//uploadFile(e);
+	document.querySelector("#finalFileName").value =  fileName ;
+	//e.target.files[0].name = "azer" ;
+	//console.log("files 00 name :") ;
+	//console.log(e.target.files[0].name) ;
+
+	// get the name 
+	
 });
+
 
 firebase.auth().onAuthStateChanged(function(user){
 	if(user){
@@ -499,6 +507,7 @@ function uploadFile(e){
 	function progress(snapshot){
 		var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) *100 ;
 		uploader.value = percentage ;
+		document.querySelector("#uploadState").innerHTML = "uploading..." ;
 		data = snapshot ;
 	} ,
 
@@ -509,6 +518,8 @@ function uploadFile(e){
 
 	function complete(){
 		console.log("done : ") ;
+		document.querySelector("#uploadState").innerHTML = "file uploaded successfully" ;
+		document.querySelector("#doneUpload").style.display = "inline" ;
 		console.log(data.task.metadata_.size) ;
 		console.log(data.task.metadata_.bucket) ;
 		console.log(data.task.metadata_.fullPath) ;
@@ -571,13 +582,14 @@ function uploadFile(e){
 			views : 0
 		}) ;
 		//alert("file uploaded ") ;
+		/*
 		if(confirm("file uploaded successfully ! \n do you want to upload more documents ?")){
 			// upload more
 		}
 		else{
 			location.reload() ;
 		}
-
+		*/
 		// confirm 
 	}
 	) ;
@@ -1079,4 +1091,76 @@ function filterTracks(){
 }
 
 
+function backToStage1(){
+	//alert("i am going back stage 1 ") ;
+  	document.querySelector("#stage1").style.display = "inline" ;
+	document.querySelector("#stage2").style.display = "none" ;
+}
+
+function goToStage3(){
+	let upSubject = document.querySelector("#other-subject").value ;
+	let upType = document.querySelector("#file-types").value ;
+	let upTrack = document.querySelector("#track").value ; 
+	let upLevel = document.querySelector("#level").value ;
+	if(upSubject == "select-subject" || upType == "select-type" || upTrack == "select-track" || upLevel == "select-level"){
+		alert("please select subject , type , track and level first !") ;
+	}
+	else{
+		//alert("i am going to stage 3 ") ;
+		document.querySelector("#fileNameEnd").innerHTML = document.querySelector("#finalFileName").value ;
+		document.querySelector("#fileTypeSubjectEnd").innerHTML = upType + " " + upSubject ;
+		document.querySelector("#fileLevelTrackEnd").innerHTML = upTrack + "(" + upLevel+ ")" ; 
+		document.querySelector("#stage2").style.display = "none" ;
+		document.querySelector("#stage3").style.display = "inline" ;
+
+
+		//alert("will upload  !") ;
+		
+		// // /// / /this used to be the usual upload !!!
+		//uploadFile(e);
+		// /// / /// 
+	}
+	//uploadFile(e);
+}
+
+document.querySelector("#backToStage1").addEventListener("click" , function(e){
+	e.preventDefault() ;
+	backToStage1() ;
+});
+
+document.querySelector("#goToStage3").addEventListener("click" , function(e){
+	e.preventDefault() ;
+	goToStage3() ;
+});
+
+
+document.querySelector("#backToStage2").addEventListener("click" , function(e){
+	e.preventDefault() ;
+	document.querySelector("#stage3").style.display = "none" ;
+	document.querySelector("#stage2").style.display = "inline" ;
+}) ;
+
+document.querySelector("#goToStage4").addEventListener("click" , function(e){
+	e.preventDefault() ;
+	document.querySelector("#stage4Background").style.display = "inline" ;
+	document.querySelector("#stage4").style.display = "inline" ;
+	uploadFile(fileEvent) ;
+});
+
+
+document.querySelector("#doneUpload").addEventListener("click" , function(e){
+	e.preventDefault() ;
+	//alert("go go go") ;
+	document.querySelector("#doneUpload").style.display = "none" ;
+	document.querySelector("#stage4").style.display = "none" ;
+	document.querySelector("#stage3").style.display = "none" ;
+	document.querySelector("#stage2").style.display = "none" ;
+	document.querySelector("#stage1").style.display = "inline" ;
+	document.querySelector("#stage4Background").style.display = "none" ;
+});
+
+
 filter() ;
+
+
+

@@ -245,47 +245,83 @@
 						<input required type="text" id = "fileName">
 					</div>
 					-->
-					<div class = "block">
-						<label>subject<span style = "color: red">*</span> </label>
-						<select id = "other-subject">
-							<option value="select-subject">select subject</option>
-						</select>
+					<div id="stage1">
+						<div class = "block">
+							<label>select file<span style = "color: red">*</span> </label>
+							<input type="file" id = "file" required>
+							<label for="file" id = "fileLabel">choose file</label>
+						</div>
 					</div>
-					<div class = "block">
-						<label>type<span style = "color: red">*</span> </label>
-						<select id = "file-types">
-							<option value="exercices">exercices</option>
-							<option value="test">test</option>
-							<option value="course">course</option>
-							<option value="exercices-correction">exercices-correction</option>
-							<option value="test-correction">test-correction</option>
-							<option selected  value="select-type">select type</option>
-						</select>
+
+					<div id = "stage2">
+						<div class = "block">
+							<label>File name</label>
+							<input type="text" id = "finalFileName" disabled>
+						</div>
+						<div class = "block">
+							<label>subject<span style = "color: red">*</span> </label>
+							<select id = "other-subject">
+								<option value="select-subject">select subject</option>
+							</select>
+						</div>
+						<div class = "block">
+							<label>type<span style = "color: red">*</span> </label>
+							<select id = "file-types">
+								<option value="exercices">exercices</option>
+								<option value="test">test</option>
+								<option value="course">course</option>
+								<option value="exercices-correction">exercices-correction</option>
+								<option value="test-correction">test-correction</option>
+								<option selected  value="select-type">select type</option>
+							</select>
+						</div>
+						<div class = block>
+							<label>track<span style = "color: red">*</span> </label>
+							<select id="track">
+								<option selected value="select-track">select track</option>
+								<option  value="prepa integree">integrated preparatory</option>
+								<option value="bachelor">bachelor</option>
+								<option value="master">master</option>
+								<option value="Engineering">Engineering</option>
+							</select>
+						</div>
+						<div class = block>
+							<label>level<span style = "color: red">*</span> </label>
+							<select id="level">
+								<option selected value="select-level">select level</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+							</select>
+						</div>
+						<button id = "backToStage1" class = "std-button">back</button>
+						<button id = "goToStage3" class = "std-button">next</button>
 					</div>
-					<div class = block>
-						<label>track<span style = "color: red">*</span> </label>
-						<select id="track">
-							<option selected value="select-track">select track</option>
-							<option  value="prepa integree">integrated preparatory</option>
-							<option value="bachelor">bachelor</option>
-							<option value="master">master</option>
-							<option value="Engineering">Engineering</option>
-						</select>
+
+					<div id="stage3">
+						<h2 id = "fileNameEnd">file Name : </h2>
+						<h2 id = "fileTypeSubjectEnd"> [type / subject]</h2>
+						<h2 id = "fileLevelTrackEnd">[level / track]</h2>
+						<button id = "backToStage2" class = "std-button">back</button>
+						<button id = "goToStage4" class = "std-button">confirm</button>
 					</div>
-					<div class = block>
-						<label>level<span style = "color: red">*</span> </label>
-						<select id="level">
-							<option selected value="select-level">select level</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-						</select>
+					
+					<div id="stage4">
+						<div id = "addArea">
+							<img src="./kollia2.png" alt="">
+						</div>
+						<div id = "uploadBoard">
+							<progress value = '0' max = '100' id = 'uploader'>0%</progress>
+							<div>
+								<div id = "upload-gif"></div>
+							</div>
+						</div>
+						<h3 id = "uploadState">upload status</h3>
+						<button id = "doneUpload" class = "std-button">Done</button>
 					</div>
-					<div class = "block">
-						<label>select file<span style = "color: red">*</span> </label>
-						<input  type="file" id = "file" required>
-					</div>
-					<progress value = '0' max = '100' id = 'uploader'>0%</progress>
+
+					<div id = "stage4Background"></div>
+					
 					<!--
 					<input type="submit" value="upload" id = "upload-button">
 					-->
