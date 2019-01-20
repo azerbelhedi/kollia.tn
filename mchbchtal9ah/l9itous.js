@@ -2,7 +2,9 @@ document.addEventListener("keydown" , (e) => {
 	//console.log(e.which) ;
 	//alert(e.which) ;
 	if(e.which === 123){e.preventDefault();}
-	if(e.which === 67){e.preventDefault();}
+	//if(e.which === 16){e.preventDefault();}
+	
+	//alert(e.which) ; 
 });
 
 let fileEvent ;
