@@ -136,7 +136,7 @@ function createAccount(e){
 		});
 		//console.log(res) ;
 		if(res != -1){
-			alert("the name is already token") ;
+			//alert("the name is already token") ;
 			return false ;}
 		else{
 			let data = {
