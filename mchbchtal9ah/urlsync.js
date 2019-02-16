@@ -38,6 +38,12 @@ function syncFilter(filter){
 }
 
 
+// test link params : 
+/* 
+https://kollia.tn/index.html
+?mode=file&path=Algebra/18-19/Chap1(espaces//vectoriels).pdf&name=18-19/Chap1(espaces//vectoriels).pdf&userName=azer/belhedi
+?mode=file&path=Algebra/18-19 Chap1(espaces%20 vectoriels).pdf&name=18-19 Chap1(espaces%20 vectoriels).pdf&userName=azer belhedi
+*/
 function parseURLParams(url) {
     var queryStart = url.indexOf("?") + 1,
         queryEnd   = url.indexOf("#") + 1 || url.length + 1,

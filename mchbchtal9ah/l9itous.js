@@ -20,7 +20,7 @@ document.querySelector("#level").value = "select-level" ;
 
 console.log("hey") ;
 var globalUser ;
-var loginButton = "log in" ;
+var loginButton = "Connecter" ;
 // Initialize Firebase
 displayMain() ;
 renderState = "main";
@@ -82,12 +82,12 @@ function displayUpload(){
 function switchLog(){
 	deleteDisplay();
 	if(renderState == "main"){
-		if(loginButton == "log in"){
+		if(loginButton == "Connecter"){
 			displayLog();
 			renderState = "log";
-			document.getElementsByClassName("fixed-login")[0].innerHTML = "home";
+			document.getElementsByClassName("fixed-login")[0].innerHTML = "Documents";
 		}
-		else if(loginButton == "log out"){
+		else if(loginButton == "Deconnecter"){
 			logout() ;
 		}
 	}
@@ -275,7 +275,7 @@ firebase.auth().onAuthStateChanged(function(user){
 		//setTimeout(function{} , 2000) ;
 		console.log("uid ::: :: : " + user.uid ) ;
 		document.querySelector("#the-upload-button").style.display = "inline" ;
-		loginButton = "log out" ;
+		loginButton = "Deconnecter" ;
 		switchLog() ;
 		document.querySelector(".popup").style.display = "block" ;
 		
@@ -344,7 +344,7 @@ firebase.auth().onAuthStateChanged(function(user){
 				alert("sorry ! we have a problem connetcting to your account ! please try again now") ;
 				//logout
 				logout() ;
-				loginButton = "log in" ;
+				loginButton = "Connecter" ;
 			document.querySelector("#the-upload-button").style.display = "none" ;
 			document.querySelector(".popup").style.display = "none" ;
 			// delete data !!
@@ -365,7 +365,7 @@ firebase.auth().onAuthStateChanged(function(user){
 		// load profile ;
 			}
 	else{
-		loginButton = "log in" ;
+		loginButton = "Connecter" ;
 		document.querySelector("#the-upload-button").style.display = "none" ;
 		document.querySelector(".popup").style.display = "none" ;
 		// delete data !!

@@ -337,7 +337,7 @@
 .fixed .round-upload button{
 	position: fixed;
 	top: 0px;
-	right: 200px;
+	right: 240px;
 	height: 50px;
 	width :150px;
 	border: none;
@@ -346,7 +346,7 @@
 	font-size: 20px;
 	font-weight: bolder;
 	display: none;
-	z-index: 3;
+	z-index: 4;
 	font-family: 'Bree Serif', serif;
 }
 .fixed .round-upload button:hover{
@@ -689,7 +689,7 @@
 	right :0px;
 	z-index: 4;
 	height: 50px;
-	width :120px;
+	width :140px;
 	border: none;
 	background-color: white;
 	color :#132238;
@@ -1102,7 +1102,7 @@ body{
 .help-bar a{
 	position: fixed;
 	top: 0px;
-	right: 110px;
+	right: 140px;
 	height: 50px;
 	width :100px;	
 	border: none;
@@ -1119,7 +1119,7 @@ body{
 	font-size: 21px;
 	color :#132238;
 	font-weight: bolder;
-	margin-top: 9px ;
+	margin-top: 12px ;
 	width: 50% ;
 	margin-left: auto ;
 	margin-right :auto;
@@ -1293,4 +1293,22 @@ body{
 
 #doneUpload{
 	display: none ;
+}
+
+.super-upload button{
+	display: block !important;
+	background-color: #76abec !important;
+	z-index :3 !important;
+}
+
+.super-upload-area{
+	position: fixed ;
+	top :200px;
+	left :35%;
+	height :200px;
+	width: 40% ;
+	background-color: #76abec ;
+	z-index: 4;
+	padding :10px;
+	display :none;
 }

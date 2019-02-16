@@ -21,13 +21,13 @@
 					<img src="kollia.png" id = "silogo">
 			</div>
 			<div class = " col-md-4 col-sm-6 fastTrack">
-				<h1>Track</h1>
+				<h1>Filière</h1>
 				<select id="fastTrack" onchange="filterTracks()">
-					<option selected value="all">All</option>
-					<option value="prepa integree">integrated preparatory</option>
-					<option value="bachelor">bachelor</option>
-					<option value="master">master</option>
-					<option value="Engineering">Engineering</option>
+					<option selected value="all">tous</option>
+					<option value="prepa integree">Préparatoire Intégré</option>
+					<option value="bachelor">Licence</option>
+					<option value="master">Master </option>
+					<option value="Engineering">Ingénieur </option>
 				</select>
 			</div>
 			<!--
@@ -36,66 +36,66 @@
 			</div>
 			-->
 			<div class = "col-md-3 col-sm-12 search-button">
-				<button id = "not-search-button">search</button>
-				<div class = "fixed-login" onclick="switchLog()">login </div>
+				<button id = "not-search-button">chercher</button>
+				<div class = "fixed-login" onclick="switchLog()">Se connecter </div>
 			</div>
 		</div>
 		<div class = "row main">
 			<div class = "col-md-2 col-sm-2 col-12 menu">
 				<div class = "categories">
 					<center>
-						<h2 class = "category" >University</h2>
+						<h2 class = "category" >Université</h2>
 						<select class = "list" id = "unis" onchange = "loadSchool()">
-							<option value="all">all</option>
+							<option value="all">Tous</option>
 						</select>
 						<hr class = "small-hr">
-						<h2 class = "category">School</h2>
+						<h2 class = "category">Fac</h2>
 						<select class = "list" id = "schools">
-							<option value="all">all</option>
+							<option value="all">Tous</option>
 						</select>
 						<hr class = "small-hr">
-						<h2 class = "category">Subject</h2>
+						<h2 class = "category">Matières</h2>
 						<select class = "list" id = "subject">
-							<option value="all">all</option>
+							<option value="all">Tous</option>
 						</select>
 						<hr class = "small-hr">
 						<h2 class = "category">Type</h2>
 						<select class = "list" id = 'docType'>
-							<option selected  value="all">all</option>
+							<option selected  value="all">Tous</option>
 							<option value="exercices">exercices</option>
-							<option value="test">test</option>
-							<option value="course">course</option>
-							<option value="exercices-correction">exercices-correction</option>
-							<option value="test-correction">test-correction</option>
+							<option value="test">Devoirs</option>
+							<option value="course">Cours</option>
+							<option value="exercices-correction">Correction-Exercices</option>
+							<option value="test-correction">Correction-Devoirs</option>
 						</select>
 						<hr class = "small-hr">
-						<h2 class = "category">Track</h2>
+						<h2 class = "category">Filière</h2>
 						<select class = "list" id = "track-filter">
-							<option value="all">all</option>
-							<option  selected value="prepa integree">integrated preparatory</option>
-							<option value="bachelor">bachelor</option>
-							<option value="master">master</option>
-							<option value="Engineering">Engineering</option>
+							<option selected value="all">tous</option>
+							<option value="prepa integree">Préparatoire Intégré</option>
+							<option value="bachelor">Licence</option>
+							<option value="master">Master </option>
+							<option value="Engineering">Ingénieur </option>
 						</select>
 						<hr class = "small-hr">
-						<h2 class = "category">Level</h2>
+						<h2 class = "category">Niveau</h2>
 						<select class = "list" id = "level-filter">
-							<option value="all">all</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
+							<option value="all">Tous</option>
+							<option value="1">1er</option>
+							<option value="2">2em</option>
+							<option value="3">3em</option>
 						</select>
 						<hr class = "small-hr">
-						<h2 class = "category">order</h2>
+						<h2 class = "category">Ordre</h2>
 						<select class = "list">
-							<option value="new-first">new first</option>
+							<option value="new-first">par date </option>
 						</select>
 					</center>
 				</div>
 				<div class = "long-search">
 					<center>
-						<button onclick = "filter()">search</button>
-						<button onclick = "resetFilter()">reset</button>
+						<button onclick = "filter()">Rechercher</button>
+						<button onclick = "resetFilter()">Réinitialiser</button>
 					</center>
 				</div>
 			</div>
@@ -131,22 +131,22 @@
 				-->
 				<div id = "colors-helper">
 					<div class = "color-box green-box" onclick = "courseFilter()">
-						<h3>Course</h3>
+						<h3>Cours</h3>
 					</div>
 					<div class = "color-box yellow-box" onclick="exercicesFilter()">
 						<h3>Exercices</h3>
 					</div>
 					<div class = "color-box orange-box" onclick="testFilter()">
-						<h3>Test</h3>
+						<h3>Devoirs</h3>
 					</div>
 					<div class = "color-box red-box" onclick="testCorrectionFilter()">
-						<h3>Test-correction</h3>
+						<h3>Correction-Devoirs</h3>
 					</div>
 					<div class = "color-box red-box" onclick=" exercicesCorrectionFilter()">
-						<h3>Exercices-correction</h3>
+						<h3>Correction-Exercices</h3>
 					</div>
 					<div class = "color-box all-box" onclick="allFilter()">
-						<h3>All</h3>
+						<h3>Tous</h3>
 					</div>
 				</div>
 				<div class = "row top-docs" >
@@ -174,65 +174,65 @@
 		<center>
 			<div class = "log-block">
 				<div class = "login">
-					<h1 id = "login-title">log in</h1>
+					<h1 id = "login-title">Se connecter</h1>
 					<form id = "login-form">
 						<div class = "block">
 							<label>email<span style = "color: red">*</span> </label>
 							<input  required type="email" id = "email">
 						</div>
 						<div class = "block">
-							<label>password<span style = "color: red">*</span> </label>
+							<label>mot de passe<span style = "color: red">*</span> </label>
 							<input required type="password" id = "password">
 						</div>
-						<input type="submit" value="login" id ="login-button">
+						<input type="submit" value="se connecter" id ="login-button">
 					</form>
 					<hr id = "hr1">
 				</div>
 				<div class = "signup">
-					<h1>or sign up</h1>
+					<h1>créer un compte</h1>
 					<form id = "signup-form">
 						<div class = "block">
 							<label>email<span style = "color: red">*</span> </label>
 							<input required type="email" id = "email2">
 						</div>
 						<div class = "block">
-							<label>name<span style = "color: red">*</span> </label>
+							<label>nom<span style = "color: red">*</span> </label>
 							<input required type="text" id = "name">
 						</div>
 						<div class = "block">
-							<label>job<span style = "color: red">*</span> </label>
+							<label>occupation<span style = "color: red">*</span> </label>
 							<select required name="job" id="job">
 								<option value="student">student</option>
 								<option value="professor">professor</option>
 							</select>
 						</div>
 						<div class = "block">
-							<label>phone </label>
+							<label>telephone </label>
 							<input type="text" id = "phone">
 						</div>
 						<div class = "block-select">
 							<div class = "block">
-								<label>university<span style = "color: red">*</span></label>
+								<label>université<span style = "color: red">*</span></label>
 								<select required id = "uni" onchange="loadSchool2()">
 									<option value="sousse" selected>sousse</option>
 								</select>
 							</div>
 							<div class = "block">
-								<label>school<span style = "color: red">*</span></label>
+								<label>fac<span style = "color: red">*</span></label>
 								<select required id = "school2">
 									<option value="issat" selected>issat</option>
 								</select>
 							</div>
 						</div>
 						<div class = "block">
-							<label>password<span style = "color: red">*</span> </label>
+							<label>mot de passe<span style = "color: red">*</span> </label>
 							<input required type="password" id = "pass1">
 						</div>
 						<div class = "block">
-							<label>confirm password<span style = "color: red">*</span> </label>
+							<label>confirmer mot de passe<span style = "color: red">*</span> </label>
 							<input required type="password" id = "pass2">
 						</div>
-						<input type="submit" value="sign up" id = "signup-button">
+						<input type="submit" value="créer" id = "signup-button">
 					</form>
 				</div>
 			</div>
@@ -330,9 +330,18 @@
 		</center>
 		<div class = "fixed">
 			<div class = "round-upload">
-				<button onclick="displayUpload()" id = "the-upload-button">upload file</button>
+				<button onclick="displayUpload()" id = "the-upload-button">Ajouter doc</button>
 			</div>
 		</div>	
+		<!--ssssssssssssssssss-->
+		<!--
+		<div class = "fixed">
+			<div class = "round-upload super-upload">
+				<button onclick="superUpload()" id = "the-upload-button">Ajouter doc</button>
+			</div>
+		</div>
+		-->
+		<!--!!!!!!!!!!!!!!!!!!-->
 	</div>
 	<div class="stop">
 		<h3>( to get access to the documents ! )</h3>
@@ -379,10 +388,22 @@
 		</center>
 	</div>
 	<div class = "help-bar">
-		<a id = "help-button" href = "https://www.youtube.com/watch?v=N3OD8WssjKA" target="_blank"> <h1>Help</h1></a>
+		<a id = "help-button" href = "https://www.youtube.com/watch?v=N3OD8WssjKA" target="_blank"> <h1>Aide</h1></a>
 	</div>
 	<div onclick = "responsiveFilterButton()" class = "responsive-filter-button">
 		<h1 id = "responsive-filter-button">Search Documents</h1>
+	</div>
+	<div class = "super-upload-area" id = "super-upload-area">
+		<center>
+			<form id = "superass">
+				<h1>mot de passe du professeure</h1>
+				<input type="password" id = "prof-pass">
+				<hr>
+				<button onclick="cancelSuperUpload()">annuler</button>
+				<!-- <button id = "confirm-super-upload" >confirmer</button> -->
+				<input type="submit" value = "confirmer !"> ;
+			</form>
+		</center>
 	</div>
 </body>
 <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
@@ -390,4 +411,5 @@
 <script src = "mchbchtal9ah/responsive.js"></script>
 <script src = "mchbchtal9ah/l9itous.js"></script>
 <script src = "mchbchtal9ah/logtimer.js"></script>
+<script src = "mchbchtal9ah/superUpload.js"></script>
 </html>	
